@@ -1,0 +1,288 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1619 ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"10 D:\telecharegement\SD\SD.X\main.c
+[v _file file `(v  1 e 1 0 ]
+"41
+[v _readSD readSD `(v  1 e 1 0 ]
+"70
+[v _fat fat `(v  1 e 1 0 ]
+"133
+[v _SPI SPI `(uc  1 e 1 0 ]
+"140
+[v _Command Command `(uc  1 e 1 0 ]
+"160
+[v _initSD initSD `(v  1 e 1 0 ]
+"208
+[v _main main `(v  1 e 1 0 ]
+"50 D:\telecharegement\SD\SD.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"57
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"57 D:\telecharegement\SD\SD.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"65 D:\telecharegement\SD\SD.X\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
+"79
+[v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
+"866 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
+"1612
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1662
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1701
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S123 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"2074
+[s S130 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S137 . 1 `S123 1 . 1 0 `S130 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES137  1 e 1 @149 ]
+"2196
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2254
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2623
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S206 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+]
+"2638
+[u S213 . 1 `S206 1 . 1 0 ]
+[v _LATAbits LATAbits `VES213  1 e 1 @268 ]
+"2673
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2712
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+[s S170 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"2729
+[u S179 . 1 `S170 1 . 1 0 ]
+[v _LATCbits LATCbits `VES179  1 e 1 @270 ]
+"3048
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"3323
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3370
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3409
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"4517
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"4575
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4614
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"4684
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"4938
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"5446
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+[s S49 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"5468
+[u S58 . 1 `S49 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES58  1 e 1 @532 ]
+"5568
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S22 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"5601
+[s S28 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S33 . 1 `S22 1 . 1 0 `S28 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES33  1 e 1 @533 ]
+"6082
+[v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
+"6127
+[v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
+"6166
+[v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
+"6235
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
+"21961
+[v _SSPCLKPPS SSPCLKPPS `VEuc  1 e 1 @3616 ]
+"22005
+[v _SSPDATPPS SSPDATPPS `VEuc  1 e 1 @3617 ]
+"22885
+[v _RB5PPS RB5PPS `VEuc  1 e 1 @3741 ]
+"22929
+[v _RB6PPS RB6PPS `VEuc  1 e 1 @3742 ]
+"28386
+[v _BF BF `VEb  1 e 0 @4256 ]
+"32170
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"5 D:\telecharegement\SD\SD.X\main.c
+[v _loc loc `ul  1 e 4 0 ]
+[v _BootSector BootSector `ul  1 e 4 0 ]
+[v _RootDir RootDir `ul  1 e 4 0 ]
+[v _SectorsPerFat SectorsPerFat `ul  1 e 4 0 ]
+[v _RootDirCluster RootDirCluster `ul  1 e 4 0 ]
+[v _DataSector DataSector `ul  1 e 4 0 ]
+[v _FileCluster FileCluster `ul  1 e 4 0 ]
+[v _FileSize FileSize `ul  1 e 4 0 ]
+"6
+[v _BytesPerSector BytesPerSector `ui  1 e 2 0 ]
+[v _ReservedSectors ReservedSectors `ui  1 e 2 0 ]
+[v _card card `ui  1 e 2 0 ]
+"8
+[v _sdhc sdhc `uc  1 e 1 0 ]
+[v _SectorsPerCluster SectorsPerCluster `uc  1 e 1 0 ]
+[v _Fats Fats `uc  1 e 1 0 ]
+"208
+[v _main main `(v  1 e 1 0 ]
+{
+"210
+[v main@sn sn `uc  1 a 1 61 ]
+[v main@fn fn `uc  1 a 1 60 ]
+"224
+} 0
+"41
+[v _readSD readSD `(v  1 e 1 0 ]
+{
+"43
+[v readSD@i i `ui  1 a 2 19 ]
+[v readSD@r r `ui  1 a 2 16 ]
+"44
+[v readSD@data data `uc  1 a 1 18 ]
+"68
+} 0
+"160
+[v _initSD initSD `(v  1 e 1 0 ]
+{
+"162
+[v initSD@r r `[4]uc  1 a 4 12 ]
+[v initSD@i i `uc  1 a 1 16 ]
+"204
+} 0
+"10
+[v _file file `(v  1 e 1 0 ]
+{
+"13
+[v file@fs fs `[4]uc  1 a 4 37 ]
+[v file@fc fc `[4]uc  1 a 4 33 ]
+"12
+[v file@i i `ui  1 a 2 41 ]
+[v file@r r `ui  1 a 2 31 ]
+"10
+[v file@offset offset `ui  1 p 2 12 ]
+[v file@sect sect `uc  1 p 1 14 ]
+"39
+} 0
+"70
+[v _fat fat `(v  1 e 1 0 ]
+{
+"73
+[v fat@rdc rdc `[4]uc  1 a 4 42 ]
+[v fat@spf spf `[4]uc  1 a 4 38 ]
+[v fat@pfs pfs `[4]uc  1 a 4 34 ]
+"72
+[v fat@i i `ui  1 a 2 46 ]
+[v fat@r r `ui  1 a 2 28 ]
+"73
+[v fat@rs2 rs2 `uc  1 a 1 33 ]
+[v fat@rs1 rs1 `uc  1 a 1 32 ]
+[v fat@bps2 bps2 `uc  1 a 1 31 ]
+[v fat@bps1 bps1 `uc  1 a 1 30 ]
+"131
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"140 D:\telecharegement\SD\SD.X\main.c
+[v _Command Command `(uc  1 e 1 0 ]
+{
+[v Command@frame1 frame1 `uc  1 a 1 wreg ]
+"142
+[v Command@i i `uc  1 a 1 11 ]
+[v Command@res res `uc  1 a 1 10 ]
+"140
+[v Command@frame1 frame1 `uc  1 a 1 wreg ]
+[v Command@adrs adrs `ul  1 p 4 0 ]
+[v Command@frame2 frame2 `uc  1 p 1 4 ]
+"145
+[v Command@frame1 frame1 `uc  1 a 1 9 ]
+"158
+} 0
+"133
+[v _SPI SPI `(uc  1 e 1 0 ]
+{
+[v SPI@spidata spidata `uc  1 a 1 wreg ]
+[v SPI@spidata spidata `uc  1 a 1 wreg ]
+"135
+[v SPI@spidata spidata `uc  1 a 1 0 ]
+"138
+} 0
+"50 D:\telecharegement\SD\SD.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"55
+} 0
+"65 D:\telecharegement\SD\SD.X\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"57 D:\telecharegement\SD\SD.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"106
+} 0
+"57 D:\telecharegement\SD\SD.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"65
+} 0
