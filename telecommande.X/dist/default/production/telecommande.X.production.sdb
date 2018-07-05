@@ -27,6 +27,8 @@
 [v _init_A init_A `(v  1 e 1 0 ]
 "234
 [v _remote remote `(v  1 e 1 0 ]
+"246
+[v _ReturnReg ReturnReg `(uc  1 e 1 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
@@ -94,7 +96,7 @@
 ]
 [u S177 . 1 `S163 1 . 1 0 `S172 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES177  1 e 1 @11 ]
-[s S454 . 1 `uc 1 RC0 1 0 :1:0 
+[s S496 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -104,8 +106,8 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "533
-[u S463 . 1 `S454 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES463  1 e 1 @14 ]
+[u S505 . 1 `S496 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES505  1 e 1 @14 ]
 [s S207 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -161,7 +163,7 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S475 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S458 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -169,12 +171,24 @@
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2638
-[u S482 . 1 `S475 1 . 1 0 ]
-[v _LATAbits LATAbits `VES482  1 e 1 @268 ]
+[u S465 . 1 `S458 1 . 1 0 ]
+[v _LATAbits LATAbits `VES465  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
+[s S475 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"2729
+[u S484 . 1 `S475 1 . 1 0 ]
+[v _LATCbits LATCbits `VES484  1 e 1 @270 ]
 "3048
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3323
@@ -185,6 +199,8 @@
 [v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
 "3672
 [v _RC1REG RC1REG `VEuc  1 e 1 @409 ]
+"3677
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
 "3726
 [v _TX1REG TX1REG `VEuc  1 e 1 @410 ]
 "3800
@@ -263,7 +279,7 @@
 [v _SSP1CON1bits SSP1CON1bits `VES352  1 e 1 @533 ]
 "5838
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S578 . 1 `uc 1 SEN 1 0 :1:0 
+[s S614 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -273,8 +289,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5860
-[u S587 . 1 `S578 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES587  1 e 1 @534 ]
+[u S623 . 1 `S614 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES623  1 e 1 @534 ]
 "6082
 [v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
 "6127
@@ -326,10 +342,12 @@
 {
 "17
 [v main@buf buf `[64]uc  1 a 64 2 ]
+"52
+[v main@k k `uc  1 a 1 67 ]
 "16
 [v main@error error `uc  1 a 1 66 ]
-[v main@F12083 F12083 `[64]uc  1 s 64 F12083 ]
-"86
+[v main@F12084 F12084 `[64]uc  1 s 64 F12084 ]
+"105
 } 0
 "234 C:\Users\Alex\MPLABXProjects\telecommande.X\bluetooth.c
 [v _remote remote `(v  1 e 1 0 ]
@@ -343,7 +361,7 @@
 [v init_A@buf buf `[64]uc  1 a 64 5 ]
 "178
 [v init_A@error error `uc  1 a 1 69 ]
-[v init_A@F12072 F12072 `[64]uc  1 s 64 F12072 ]
+[v init_A@F12073 F12073 `[64]uc  1 s 64 F12073 ]
 "214
 } 0
 "85
@@ -457,6 +475,11 @@
 {
 [v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 2 ]
 "217
+} 0
+"246 C:\Users\Alex\MPLABXProjects\telecommande.X\bluetooth.c
+[v _ReturnReg ReturnReg `(uc  1 e 1 0 ]
+{
+"249
 } 0
 "52 C:\Users\Alex\MPLABXProjects\telecommande.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F12028 `(v ~T0 @X0 0 tf ]
-[v F12031 `(v ~T0 @X0 0 tf ]
+[v F12029 `(v ~T0 @X0 0 tf ]
+[v F12032 `(v ~T0 @X0 0 tf ]
 "300 mcc_generated_files/eusart.h
 [v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
 [v F11946 `(v ~T0 @X0 1 tf1`ul ]
@@ -11,6 +11,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _eusartRxCount `Vuc ~T0 @X0 0 e ]
 "280
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
+"3677 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
+[v _RCREG `Vuc ~T0 @X0 0 e@409 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -10790,8 +10792,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bluetooth.h: 91: void StopScan();
 [; ;bluetooth.h: 92: void connexion();
 [; ;bluetooth.h: 93: void remote();
-[; ;pin_manager.h: 210: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 222: void PIN_MANAGER_IOC(void);
+[; ;bluetooth.h: 94: char ReturnReg();
+[; ;pin_manager.h: 227: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 239: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -10833,10 +10836,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 78: extern volatile uint8_t eusartTxBufferRemaining;
 [; ;eusart.h: 79: extern volatile uint8_t eusartRxCount;
 "85 mcc_generated_files/eusart.h
-[v _EUSART_TxDefaultInterruptHandler `*F12028 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F12029 ~T0 @X0 1 e ]
 [; ;eusart.h: 85: void (*EUSART_TxDefaultInterruptHandler)(void);
 "86
-[v _EUSART_RxDefaultInterruptHandler `*F12031 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F12032 ~T0 @X0 1 e ]
 [; ;eusart.h: 86: void (*EUSART_RxDefaultInterruptHandler)(void);
 [; ;eusart.h: 108: void EUSART_Initialize(void);
 [; ;eusart.h: 161: uint8_t EUSART_is_tx_ready(void);
@@ -11299,8 +11302,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _error `uc ~T0 @X0 1 a ]
 [; ;bluetooth.c: 178: unsigned char error = 0;
 [e = _error -> -> 0 `i `uc ]
-[v F12072 `uc ~T0 @X0 -> 64 `i s ]
-[i F12072
+[v F12073 `uc ~T0 @X0 -> 64 `i s ]
+[i F12073
 :U ..
 "179
 -> -> 0 `i `uc
@@ -11308,7 +11311,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _buf `uc ~T0 @X0 -> 64 `i a ]
 [; ;bluetooth.c: 179: char buf [64] = {0};
-[e = _buf F12072 ]
+[e = _buf F12073 ]
 [; ;bluetooth.c: 183: Turn_On();
 "183
 [e ( _Turn_On ..  ]
@@ -11432,4 +11435,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bluetooth.c: 244: }
 "244
 [e :UE 1236 ]
+}
+"246
+[v _ReturnReg `(uc ~T0 @X0 1 ef ]
+{
+[; ;bluetooth.c: 246: char ReturnReg(){
+[e :U _ReturnReg ]
+[f ]
+[; ;bluetooth.c: 247: return RCREG;
+"247
+[e ) _RCREG ]
+[e $UE 1237  ]
+[; ;bluetooth.c: 249: }
+"249
+[e :UE 1237 ]
 }

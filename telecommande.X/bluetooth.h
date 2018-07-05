@@ -91,3 +91,4 @@ void Scan();
 void StopScan();
 void connexion();
 void remote();
+char ReturnReg();

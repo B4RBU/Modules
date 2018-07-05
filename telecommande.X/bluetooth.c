@@ -242,3 +242,8 @@ void remote()
     EUSART_Write(13);
     EUSART_Write(10);
 }
+
+char ReturnReg(){
+    return RCREG;
+    
+}

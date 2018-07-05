@@ -14781,10 +14781,10 @@ void re_startI2C();
 void sendAckI2C();
 void sendNoAckI2C();
 
-# 210 "mcc_generated_files/pin_manager.h"
+# 227 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 222
+# 239
 void PIN_MANAGER_IOC(void);
 
 # 109 "mcc_generated_files/interrupt_manager.h"

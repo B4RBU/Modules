@@ -49,38 +49,57 @@ void main(void) {
 
     remote();
     __delay_ms(1000);
-
+    uint8_t k;
     while (1) {
-        if (boutton2_GetValue() == 0) {
 
-            //  Bt = 1;
-            LED1_SetHigh();
-            EUSART_Write('$');
+        k = ReturnReg();
 
-
-
-            EUSART_Write(10);
-            EUSART_Write(13);
-
-
-
-
-
+        if (k == '$') {
+            LED1_Toggle();
+            LED2_Toggle();
+            LED3_Toggle();
+            LED4_Toggle();
+            __delay_ms(1000);
         }
-        else if (boutton2_GetValue() == 1) {
-            // Bt = 0;
-            LED1_SetLow();
-            // EUSART_Write('é');
 
 
 
-            // EUSART_Write(10);
-            // EUSART_Write(13);
 
 
 
-        }
-        // WriteOnBt(Bt);
-        //error = Verif_Erreur(buf,BUF_LEN);
+    
+
+
+
+    if (boutton2_GetValue() == 0) {
+
+        //  Bt = 1;
+        LED1_SetHigh();
+        EUSART_Write('$');
+
+
+
+        EUSART_Write(10);
+        EUSART_Write(13);
+
+
+
+
+
+    } else if (boutton2_GetValue() == 1) {
+        // Bt = 0;
+        LED1_SetLow();
+        // EUSART_Write('é');
+
+
+
+        // EUSART_Write(10);
+        // EUSART_Write(13);
+
+
+
     }
+    // WriteOnBt(Bt);
+    //error = Verif_Erreur(buf,BUF_LEN);
+}
 }
