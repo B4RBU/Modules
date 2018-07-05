@@ -1,17 +1,17 @@
 
 # 1 "delay.c"
 
-# 26 "/opt/microchip/xc8/v1.45/include/htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/opt/microchip/xc8/v1.45/include/xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "/opt/microchip/xc8/v1.45/include/pic16f1509.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h"
 extern volatile unsigned char INDF0 @ 0x000;
 
 asm("INDF0 equ 00h");
@@ -5175,7 +5175,7 @@ extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 extern volatile __bit nWPUEN @ (((unsigned) &OPTION_REG)*8) + 7;
 
 
-# 28 "/opt/microchip/xc8/v1.45/include/pic.h"
+# 28 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -5197,7 +5197,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 13 "/opt/microchip/xc8/v1.45/include/stdint.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -5287,16 +5287,16 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "/opt/microchip/xc8/v1.45/include/stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
 
-# 4 "/opt/microchip/xc8/v1.45/include/__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
-# 6 "/opt/microchip/xc8/v1.45/include/stddef.h"
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
 typedef int ptrdiff_t;
 
-# 7 "/opt/microchip/xc8/v1.45/include/stdlib.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
 typedef unsigned short wchar_t;
 
 # 15
@@ -5365,7 +5365,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 7 "/opt/microchip/xc8/v1.45/include/stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -5374,17 +5374,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "/opt/microchip/xc8/v1.45/include/stdio.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 29 "/opt/microchip/xc8/v1.45/include/errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
 extern int errno;
 
-# 12 "/opt/microchip/xc8/v1.45/include/conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -5398,7 +5398,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "/opt/microchip/xc8/v1.45/include/stdio.h"
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -5425,7 +5425,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 14 "/opt/microchip/xc8/v1.45/include/string.h"
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);
@@ -5463,7 +5463,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 30 "/opt/microchip/xc8/v1.45/include/math.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -5491,10 +5491,10 @@ extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
 
-# 167 "mcc_generated_files/pin_manager.h"
+# 179 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 179
+# 191
 void PIN_MANAGER_IOC(void);
 
 # 108 "mcc_generated_files/interrupt_manager.h"
@@ -5527,6 +5527,51 @@ uint8_t TMR1_CheckGateValueStatus(void);
 # 386
 bool TMR1_HasOverflowOccured(void);
 
+# 102 "mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+
+# 131
+void TMR2_StartTimer(void);
+
+# 163
+void TMR2_StopTimer(void);
+
+# 198
+uint8_t TMR2_ReadTimer(void);
+
+# 237
+void TMR2_WriteTimer(uint8_t timerVal);
+
+# 289
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+
+# 324
+bool TMR2_HasOverflowOccured(void);
+
+# 101 "mcc_generated_files/pwm4.h"
+void PWM4_Initialize(void);
+
+# 128
+void PWM4_LoadDutyValue(uint16_t dutyValue);
+
+# 101 "mcc_generated_files/pwm1.h"
+void PWM1_Initialize(void);
+
+# 128
+void PWM1_LoadDutyValue(uint16_t dutyValue);
+
+# 101 "mcc_generated_files/pwm2.h"
+void PWM2_Initialize(void);
+
+# 128
+void PWM2_LoadDutyValue(uint16_t dutyValue);
+
+# 101 "mcc_generated_files/pwm3.h"
+void PWM3_Initialize(void);
+
+# 128
+void PWM3_LoadDutyValue(uint16_t dutyValue);
+
 # 75 "mcc_generated_files/eusart.h"
 extern volatile uint8_t eusartTxBufferRemaining;
 extern volatile uint8_t eusartRxCount;
@@ -5546,16 +5591,41 @@ void EUSART_Transmit_ISR(void);
 # 184
 void EUSART_Receive_ISR(void);
 
-# 70 "mcc_generated_files/mcc.h"
+# 75 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 83
+# 88
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 101
 void WDT_Initialize(void);
 
-# 20 "header.h"
+# 21 "header.h"
+void init(void);
+void system_init(void);
+
+# 25
+void initI2C(void);
+void startI2C();
+void waitI2C();
+void stopI2C();
+void sendI2C(uint8_t);
+uint8_t readI2C();
+void re_startI2C();
+void sendAckI2C();
+void sendNoAckI2C();
+uint8_t bitExtracted(uint8_t number, uint8_t k, uint8_t p);
+uint8_t convertFromBcd(uint8_t byteBCD);
+uint8_t FSM(uint8_t IN);
+void initRTC();
+void changeMin(uint8_t minute);
+void changeHeure(uint8_t heure);
+uint8_t readSec();
+uint8_t readMin();
+uint8_t readHr();
+void incrMin();
+void incrHeure();
+
 void Partiel_Reset();
 void Set_Features();
 void Set_Mode();

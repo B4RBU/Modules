@@ -76,22 +76,17 @@
 #define IO_RA1_SetAnalogMode()  do { ANSELAbits.ANSA1 = 1; } while(0)
 #define IO_RA1_SetDigitalMode() do { ANSELAbits.ANSA1 = 0; } while(0)
 
-// get/set IO_RA2 aliases
-#define IO_RA2_TRIS               TRISAbits.TRISA2
-#define IO_RA2_LAT                LATAbits.LATA2
-#define IO_RA2_PORT               PORTAbits.RA2
-#define IO_RA2_WPU                WPUAbits.WPUA2
-#define IO_RA2_ANS                ANSELAbits.ANSA2
-#define IO_RA2_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
-#define IO_RA2_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
-#define IO_RA2_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
-#define IO_RA2_GetValue()           PORTAbits.RA2
-#define IO_RA2_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
-#define IO_RA2_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
-#define IO_RA2_SetPullup()      do { WPUAbits.WPUA2 = 1; } while(0)
-#define IO_RA2_ResetPullup()    do { WPUAbits.WPUA2 = 0; } while(0)
-#define IO_RA2_SetAnalogMode()  do { ANSELAbits.ANSA2 = 1; } while(0)
-#define IO_RA2_SetDigitalMode() do { ANSELAbits.ANSA2 = 0; } while(0)
+// get/set RA2 procedures
+#define RA2_SetHigh()    do { LATAbits.LATA2 = 1; } while(0)
+#define RA2_SetLow()   do { LATAbits.LATA2 = 0; } while(0)
+#define RA2_Toggle()   do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define RA2_GetValue()         PORTAbits.RA2
+#define RA2_SetDigitalInput()   do { TRISAbits.TRISA2 = 1; } while(0)
+#define RA2_SetDigitalOutput()  do { TRISAbits.TRISA2 = 0; } while(0)
+#define RA2_SetPullup()     do { WPUAbits.WPUA2 = 1; } while(0)
+#define RA2_ResetPullup()   do { WPUAbits.WPUA2 = 0; } while(0)
+#define RA2_SetAnalogMode() do { ANSELAbits.ANSA2 = 1; } while(0)
+#define RA2_SetDigitalMode()do { ANSELAbits.ANSA2 = 0; } while(0)
 
 // get/set IO_RA5 aliases
 #define IO_RA5_TRIS               TRISAbits.TRISA5
@@ -143,16 +138,33 @@
 #define IO_RC0_SetAnalogMode()  do { ANSELCbits.ANSC0 = 1; } while(0)
 #define IO_RC0_SetDigitalMode() do { ANSELCbits.ANSC0 = 0; } while(0)
 
-// get/set IO_RC5 aliases
-#define IO_RC5_TRIS               TRISCbits.TRISC5
-#define IO_RC5_LAT                LATCbits.LATC5
-#define IO_RC5_PORT               PORTCbits.RC5
-#define IO_RC5_SetHigh()            do { LATCbits.LATC5 = 1; } while(0)
-#define IO_RC5_SetLow()             do { LATCbits.LATC5 = 0; } while(0)
-#define IO_RC5_Toggle()             do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0)
-#define IO_RC5_GetValue()           PORTCbits.RC5
-#define IO_RC5_SetDigitalInput()    do { TRISCbits.TRISC5 = 1; } while(0)
-#define IO_RC5_SetDigitalOutput()   do { TRISCbits.TRISC5 = 0; } while(0)
+// get/set RC1 procedures
+#define RC1_SetHigh()    do { LATCbits.LATC1 = 1; } while(0)
+#define RC1_SetLow()   do { LATCbits.LATC1 = 0; } while(0)
+#define RC1_Toggle()   do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
+#define RC1_GetValue()         PORTCbits.RC1
+#define RC1_SetDigitalInput()   do { TRISCbits.TRISC1 = 1; } while(0)
+#define RC1_SetDigitalOutput()  do { TRISCbits.TRISC1 = 0; } while(0)
+#define RC1_SetAnalogMode() do { ANSELCbits.ANSC1 = 1; } while(0)
+#define RC1_SetDigitalMode()do { ANSELCbits.ANSC1 = 0; } while(0)
+
+// get/set RC3 procedures
+#define RC3_SetHigh()    do { LATCbits.LATC3 = 1; } while(0)
+#define RC3_SetLow()   do { LATCbits.LATC3 = 0; } while(0)
+#define RC3_Toggle()   do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
+#define RC3_GetValue()         PORTCbits.RC3
+#define RC3_SetDigitalInput()   do { TRISCbits.TRISC3 = 1; } while(0)
+#define RC3_SetDigitalOutput()  do { TRISCbits.TRISC3 = 0; } while(0)
+#define RC3_SetAnalogMode() do { ANSELCbits.ANSC3 = 1; } while(0)
+#define RC3_SetDigitalMode()do { ANSELCbits.ANSC3 = 0; } while(0)
+
+// get/set RC5 procedures
+#define RC5_SetHigh()    do { LATCbits.LATC5 = 1; } while(0)
+#define RC5_SetLow()   do { LATCbits.LATC5 = 0; } while(0)
+#define RC5_Toggle()   do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0)
+#define RC5_GetValue()         PORTCbits.RC5
+#define RC5_SetDigitalInput()   do { TRISCbits.TRISC5 = 1; } while(0)
+#define RC5_SetDigitalOutput()  do { TRISCbits.TRISC5 = 0; } while(0)
 
 /**
    @Param

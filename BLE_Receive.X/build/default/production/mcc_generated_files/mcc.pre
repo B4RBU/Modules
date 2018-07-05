@@ -4,6 +4,7 @@
 
 # 49
 #pragma config FOSC = INTOSC
+#pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = ON
 #pragma config CP = OFF
@@ -14,29 +15,22 @@
 
 
 #pragma config WRT = OFF
-
-
-
 #pragma config STVREN = ON
 #pragma config BORV = LO
 #pragma config LPBOR = OFF
 #pragma config LVP = ON
 
-
-
-#pragma config WDTE = OFF
-
-# 26 "/opt/microchip/xc8/v1.45/include/htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/opt/microchip/xc8/v1.45/include/xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "/opt/microchip/xc8/v1.45/include/pic16f1509.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h"
 extern volatile unsigned char INDF0 @ 0x000;
 
 asm("INDF0 equ 00h");
@@ -5200,7 +5194,7 @@ extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 extern volatile __bit nWPUEN @ (((unsigned) &OPTION_REG)*8) + 7;
 
 
-# 28 "/opt/microchip/xc8/v1.45/include/pic.h"
+# 28 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -5222,13 +5216,13 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 167 "mcc_generated_files/pin_manager.h"
+# 179 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 179
+# 191
 void PIN_MANAGER_IOC(void);
 
-# 13 "/opt/microchip/xc8/v1.45/include/stdint.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -5318,7 +5312,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "/opt/microchip/xc8/v1.45/include/stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
 
 # 108 "mcc_generated_files/interrupt_manager.h"
@@ -5351,6 +5345,51 @@ uint8_t TMR1_CheckGateValueStatus(void);
 # 386
 bool TMR1_HasOverflowOccured(void);
 
+# 102 "mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+
+# 131
+void TMR2_StartTimer(void);
+
+# 163
+void TMR2_StopTimer(void);
+
+# 198
+uint8_t TMR2_ReadTimer(void);
+
+# 237
+void TMR2_WriteTimer(uint8_t timerVal);
+
+# 289
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+
+# 324
+bool TMR2_HasOverflowOccured(void);
+
+# 101 "mcc_generated_files/pwm4.h"
+void PWM4_Initialize(void);
+
+# 128
+void PWM4_LoadDutyValue(uint16_t dutyValue);
+
+# 101 "mcc_generated_files/pwm1.h"
+void PWM1_Initialize(void);
+
+# 128
+void PWM1_LoadDutyValue(uint16_t dutyValue);
+
+# 101 "mcc_generated_files/pwm2.h"
+void PWM2_Initialize(void);
+
+# 128
+void PWM2_LoadDutyValue(uint16_t dutyValue);
+
+# 101 "mcc_generated_files/pwm3.h"
+void PWM3_Initialize(void);
+
+# 128
+void PWM3_LoadDutyValue(uint16_t dutyValue);
+
 # 75 "mcc_generated_files/eusart.h"
 extern volatile uint8_t eusartTxBufferRemaining;
 extern volatile uint8_t eusartRxCount;
@@ -5370,20 +5409,27 @@ void EUSART_Transmit_ISR(void);
 # 184
 void EUSART_Receive_ISR(void);
 
-# 70 "mcc_generated_files/mcc.h"
+# 75 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 83
+# 88
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 101
 void WDT_Initialize(void);
 
-# 77 "mcc_generated_files/mcc.c"
+# 69 "mcc_generated_files/mcc.c"
 void SYSTEM_Initialize(void)
 {
+
 PIN_MANAGER_Initialize();
 OSCILLATOR_Initialize();
+WDT_Initialize();
+PWM1_Initialize();
+PWM2_Initialize();
+PWM4_Initialize();
+PWM3_Initialize();
+TMR2_Initialize();
 TMR1_Initialize();
 EUSART_Initialize();
 }
@@ -5393,9 +5439,10 @@ void OSCILLATOR_Initialize(void)
 
 OSCCON = 0x78;
 
-
-
 BORCON = 0x00;
+}
 
+void WDT_Initialize(void)
+{
 }
 

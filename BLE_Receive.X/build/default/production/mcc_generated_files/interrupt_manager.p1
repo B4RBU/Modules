@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"355 /opt/microchip/xc8/v1.45/include/pic16f1509.h
+"355 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
 "365
@@ -35,7 +35,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1509.h: 50: extern volatile unsigned char INDF0 @ 0x000;
-"52 /opt/microchip/xc8/v1.45/include/pic16f1509.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
 [; ;pic16f1509.h: 52: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16f1509.h: 55: typedef union {
@@ -3882,8 +3882,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 167: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 179: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 179: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 191: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -3922,6 +3922,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr1.h: 309: void TMR1_StartSinglePulseAcquisition(void);
 [; ;tmr1.h: 348: uint8_t TMR1_CheckGateValueStatus(void);
 [; ;tmr1.h: 386: bool TMR1_HasOverflowOccured(void);
+[; ;tmr2.h: 102: void TMR2_Initialize(void);
+[; ;tmr2.h: 131: void TMR2_StartTimer(void);
+[; ;tmr2.h: 163: void TMR2_StopTimer(void);
+[; ;tmr2.h: 198: uint8_t TMR2_ReadTimer(void);
+[; ;tmr2.h: 237: void TMR2_WriteTimer(uint8_t timerVal);
+[; ;tmr2.h: 289: void TMR2_LoadPeriodRegister(uint8_t periodVal);
+[; ;tmr2.h: 324: bool TMR2_HasOverflowOccured(void);
+[; ;pwm4.h: 101: void PWM4_Initialize(void);
+[; ;pwm4.h: 128: void PWM4_LoadDutyValue(uint16_t dutyValue);
+[; ;pwm1.h: 101: void PWM1_Initialize(void);
+[; ;pwm1.h: 128: void PWM1_LoadDutyValue(uint16_t dutyValue);
+[; ;pwm2.h: 101: void PWM2_Initialize(void);
+[; ;pwm2.h: 128: void PWM2_LoadDutyValue(uint16_t dutyValue);
+[; ;pwm3.h: 101: void PWM3_Initialize(void);
+[; ;pwm3.h: 128: void PWM3_LoadDutyValue(uint16_t dutyValue);
 [; ;eusart.h: 75: extern volatile uint8_t eusartTxBufferRemaining;
 [; ;eusart.h: 76: extern volatile uint8_t eusartRxCount;
 [; ;eusart.h: 102: void EUSART_Initialize(void);
@@ -3929,9 +3944,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 142: void EUSART_Write(uint8_t txData);
 [; ;eusart.h: 163: void EUSART_Transmit_ISR(void);
 [; ;eusart.h: 184: void EUSART_Receive_ISR(void);
-[; ;mcc.h: 70: void SYSTEM_Initialize(void);
-[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 96: void WDT_Initialize(void);
+[; ;mcc.h: 75: void SYSTEM_Initialize(void);
+[; ;mcc.h: 88: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 101: void WDT_Initialize(void);
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
 [v F3 `(v ~T0 @X0 1 tf ]
 "51 mcc_generated_files/interrupt_manager.c

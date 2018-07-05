@@ -11,6 +11,7 @@
 
 
 
+
 void main(void) {
     
     SYSTEM_Initialize();
@@ -29,7 +30,8 @@ void main(void) {
    
     
     
-   
+   initI2C();
+    initRTC();
     init_B();
 while (1){    
     
