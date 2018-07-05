@@ -45,6 +45,7 @@
       <itemPath>BLE_Receive.c</itemPath>
       <itemPath>delay.c</itemPath>
       <itemPath>ic.c</itemPath>
+      <itemPath>BLE_send.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -64,7 +65,7 @@
         <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>1.45</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>2</platform>
       </toolsSet>
       <compileType>
         <linkerTool>

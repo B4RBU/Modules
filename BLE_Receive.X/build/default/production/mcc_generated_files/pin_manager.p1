@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"1864 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
+"1864 /opt/microchip/xc8/v1.45/include/pic16f1509.h
 [v _LATA `Vuc ~T0 @X0 0 e@268 ]
 "1909
 [v _LATB `Vuc ~T0 @X0 0 e@269 ]
@@ -38,7 +38,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1509.h: 50: extern volatile unsigned char INDF0 @ 0x000;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
+"52 /opt/microchip/xc8/v1.45/include/pic16f1509.h
 [; ;pic16f1509.h: 52: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16f1509.h: 55: typedef union {
@@ -3885,8 +3885,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 179: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 191: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 195: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 207: void PIN_MANAGER_IOC(void);
 [; ;stdbool.h: 12: typedef unsigned char bool;
 "52 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]

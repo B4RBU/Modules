@@ -2,7 +2,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "75 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"355 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
+"355 /opt/microchip/xc8/v1.45/include/pic16f1509.h
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
 "365
@@ -27,15 +27,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _initRTC `(v ~T0 @X0 0 ef ]
 "52
 [v _init_B `(v ~T0 @X0 0 ef ]
-"55
-[v _ReturnReg `(uc ~T0 @X0 0 ef ]
+"61
+[v _remote `(v ~T0 @X0 0 ef ]
 "51
 [v _delay_ms `(v ~T0 @X0 0 ef1`i ]
+"55
+[v _ReturnReg `(uc ~T0 @X0 0 ef ]
+"522 /opt/microchip/xc8/v1.45/include/pic16f1509.h
+[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S33 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"521
+[u S32 `S33 1 ]
+[n S32 . . ]
+"533
+[v _PORTCbits `VS32 ~T0 @X0 0 e@14 ]
+"142 mcc_generated_files/eusart.h
+[v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1509.h: 50: extern volatile unsigned char INDF0 @ 0x000;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
+"52 /opt/microchip/xc8/v1.45/include/pic16f1509.h
 [; ;pic16f1509.h: 52: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16f1509.h: 55: typedef union {
@@ -4045,8 +4057,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 53: extern double fmod(double, double);
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
-[; ;pin_manager.h: 179: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 191: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 195: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 207: void PIN_MANAGER_IOC(void);
 [; ;interrupt_manager.h: 108: void interrupt INTERRUPT_InterruptManager(void);
 [; ;tmr1.h: 99: void TMR1_Initialize(void);
 [; ;tmr1.h: 128: void TMR1_StartTimer(void);
@@ -4066,10 +4078,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 324: bool TMR2_HasOverflowOccured(void);
 [; ;pwm4.h: 101: void PWM4_Initialize(void);
 [; ;pwm4.h: 128: void PWM4_LoadDutyValue(uint16_t dutyValue);
-[; ;pwm1.h: 101: void PWM1_Initialize(void);
-[; ;pwm1.h: 128: void PWM1_LoadDutyValue(uint16_t dutyValue);
 [; ;pwm2.h: 101: void PWM2_Initialize(void);
 [; ;pwm2.h: 128: void PWM2_LoadDutyValue(uint16_t dutyValue);
+[; ;pwm1.h: 101: void PWM1_Initialize(void);
+[; ;pwm1.h: 128: void PWM1_LoadDutyValue(uint16_t dutyValue);
 [; ;pwm3.h: 101: void PWM3_Initialize(void);
 [; ;pwm3.h: 128: void PWM3_LoadDutyValue(uint16_t dutyValue);
 [; ;eusart.h: 75: extern volatile uint8_t eusartTxBufferRemaining;
@@ -4114,6 +4126,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;header.h: 53: int Verif_Erreur(char * buf, unsigned int size);
 [; ;header.h: 54: void lecture();
 [; ;header.h: 55: char ReturnReg();
+[; ;header.h: 57: void WriteOnBt(unsigned int);
+[; ;header.h: 58: void Scan();
+[; ;header.h: 59: void StopScan();
+[; ;header.h: 60: void connexion();
+[; ;header.h: 61: void remote();
 [v $root$_main `(v ~T0 @X0 0 e ]
 "15 main.c
 [v _main `(v ~T0 @X0 1 ef ]
@@ -4159,44 +4176,99 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 35: init_B();
 "35
 [e ( _init_B ..  ]
-[; ;main.c: 36: while (1){
-"36
+[; ;main.c: 38: remote();
+"38
+[e ( _remote ..  ]
+[; ;main.c: 39: delay_ms(1000);
+"39
+[e ( _delay_ms (1 -> 1000 `i ]
+[; ;main.c: 40: remote();
+"40
+[e ( _remote ..  ]
+[; ;main.c: 41: delay_ms(1000);
+"41
+[e ( _delay_ms (1 -> 1000 `i ]
+[; ;main.c: 42: remote();
+"42
+[e ( _remote ..  ]
+[; ;main.c: 43: delay_ms(1000);
+"43
+[e ( _delay_ms (1 -> 1000 `i ]
+[; ;main.c: 44: while (1){
+"44
 [e :U 451 ]
 {
-[; ;main.c: 38: k = ReturnReg();
-"38
+[; ;main.c: 46: k = ReturnReg();
+"46
 [e = _k -> ( _ReturnReg ..  `i ]
-[; ;main.c: 40: if (k == '$'){
-"40
+[; ;main.c: 48: if (k == '$'){
+"48
 [e $ ! == -> _k `ui -> 36 `ui 453  ]
 {
-[; ;main.c: 41: RC5 = !RC5;
-"41
+[; ;main.c: 49: RC5 = !RC5;
+"49
 [e = _RC5 ! _RC5 ]
-[; ;main.c: 42: RA2 = !RA2;
-"42
+[; ;main.c: 50: RA2 = !RA2;
+"50
 [e = _RA2 ! _RA2 ]
-[; ;main.c: 43: RA1 = !RA1;
-"43
+[; ;main.c: 51: RA1 = !RA1;
+"51
 [e = _RA1 ! _RA1 ]
-[; ;main.c: 44: RA5 = !RA5;
-"44
-[e = _RA5 ! _RA5 ]
-[; ;main.c: 45: delay_ms(1000);
-"45
-[e ( _delay_ms (1 -> 1000 `i ]
+[; ;main.c: 52: RA5 = !RA5;
 "52
+[e = _RA5 ! _RA5 ]
+[; ;main.c: 53: delay_ms(1000);
+"53
+[e ( _delay_ms (1 -> 1000 `i ]
+"54
 }
 [e :U 453 ]
-"53
+[; ;main.c: 54: }
+[; ;main.c: 57: if ( PORTCbits.RC4 == 0)
+"57
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 0 `i 454  ]
+[; ;main.c: 58: {
+"58
+{
+[; ;main.c: 61: RC5 = 1 ;
+"61
+[e = _RC5 -> -> 1 `i `b ]
+[; ;main.c: 62: EUSART_Write('$');
+"62
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;main.c: 66: EUSART_Write(10);
+"66
+[e ( _EUSART_Write (1 -> -> 10 `i `uc ]
+[; ;main.c: 67: EUSART_Write(13);
+"67
+[e ( _EUSART_Write (1 -> -> 13 `i `uc ]
+"73
+}
+[; ;main.c: 73: }
+[e $U 455  ]
+"74
+[e :U 454 ]
+[; ;main.c: 74: else if (PORTCbits.RC4 == 1)
+[e $ ! == -> . . _PORTCbits 0 4 `i -> 1 `i 456  ]
+[; ;main.c: 75: {
+"75
+{
+[; ;main.c: 77: RC5=0;
+"77
+[e = _RC5 -> -> 0 `i `b ]
+"87
+}
+[e :U 456 ]
+"94
+[e :U 455 ]
 }
 [e :U 450 ]
-"36
+"44
 [e $U 451  ]
 [e :U 452 ]
-[; ;main.c: 52: }
-[; ;main.c: 53: }
-[; ;main.c: 54: }
-"54
+[; ;main.c: 87: }
+[; ;main.c: 94: }
+[; ;main.c: 95: }
+"95
 [e :UE 449 ]
 }

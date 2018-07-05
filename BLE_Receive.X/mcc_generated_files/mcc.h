@@ -53,8 +53,8 @@
 #include "tmr1.h"
 #include "tmr2.h"
 #include "pwm4.h"
-#include "pwm1.h"
 #include "pwm2.h"
+#include "pwm1.h"
 #include "pwm3.h"
 #include "eusart.h"
 

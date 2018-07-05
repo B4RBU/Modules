@@ -1,8 +1,5 @@
 
-# 1 "mcc_generated_files/interrupt_manager.c"
-
-# 108 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
+# 1 "BLE_send.c"
 
 # 26 "/opt/microchip/xc8/v1.45/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5200,12 +5197,6 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 195 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 207
-void PIN_MANAGER_IOC(void);
-
 # 13 "/opt/microchip/xc8/v1.45/include/stdint.h"
 typedef signed char int8_t;
 
@@ -5298,6 +5289,216 @@ typedef uint16_t uintptr_t;
 
 # 12 "/opt/microchip/xc8/v1.45/include/stdbool.h"
 typedef unsigned char bool;
+
+# 4 "/opt/microchip/xc8/v1.45/include/__size_t.h"
+typedef unsigned size_t;
+
+# 6 "/opt/microchip/xc8/v1.45/include/stddef.h"
+typedef int ptrdiff_t;
+
+# 7 "/opt/microchip/xc8/v1.45/include/stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 86
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 7 "/opt/microchip/xc8/v1.45/include/stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "/opt/microchip/xc8/v1.45/include/stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "/opt/microchip/xc8/v1.45/include/errno.h"
+extern int errno;
+
+# 12 "/opt/microchip/xc8/v1.45/include/conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "/opt/microchip/xc8/v1.45/include/stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 14 "/opt/microchip/xc8/v1.45/include/string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+
+
+
+extern void * __builtin_memcpy(void *, const void *, size_t);
+#pragma intrinsic(__builtin_memcpy)
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 30 "/opt/microchip/xc8/v1.45/include/math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 195 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+
+# 207
+void PIN_MANAGER_IOC(void);
+
+# 108 "mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
 
 # 99 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -5399,28 +5600,122 @@ void OSCILLATOR_Initialize(void);
 # 101
 void WDT_Initialize(void);
 
-# 51 "mcc_generated_files/interrupt_manager.c"
-void interrupt INTERRUPT_InterruptManager (void)
-{
+# 21 "header.h"
+void init(void);
+void system_init(void);
 
-if(INTCONbits.PEIE == 1)
+# 25
+void initI2C(void);
+void startI2C();
+void waitI2C();
+void stopI2C();
+void sendI2C(uint8_t);
+uint8_t readI2C();
+void re_startI2C();
+void sendAckI2C();
+void sendNoAckI2C();
+uint8_t bitExtracted(uint8_t number, uint8_t k, uint8_t p);
+uint8_t convertFromBcd(uint8_t byteBCD);
+uint8_t FSM(uint8_t IN);
+void initRTC();
+void changeMin(uint8_t minute);
+void changeHeure(uint8_t heure);
+uint8_t readSec();
+uint8_t readMin();
+uint8_t readHr();
+void incrMin();
+void incrHeure();
+
+void Partiel_Reset();
+void Set_Features();
+void Set_Mode();
+void Reboot();
+void Turn_On();
+void delay_ms(int msec);
+void init_B();
+int Verif_Erreur(char * buf, unsigned int size);
+void lecture();
+char ReturnReg();
+
+void WriteOnBt(unsigned int);
+void Scan();
+void StopScan();
+void connexion();
+void remote();
+
+# 3 "BLE_send.c"
+void Scan()
 {
-if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
-{
-EUSART_Transmit_ISR();
+EUSART_Write('F');
+EUSART_Write(13);
+EUSART_Write(10);
+
+# 14
 }
-else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
+void StopScan()
 {
-EUSART_Receive_ISR();
-}
-else
-{
+EUSART_Write('X');
+
+EUSART_Write(13);
+EUSART_Write(10);
 
 }
-}
-else
+
+
+void connexion()
 {
+EUSART_Write('E');
+EUSART_Write(',');
+EUSART_Write('0');
+EUSART_Write(',');
+EUSART_Write('0');
+EUSART_Write('0');
+EUSART_Write('1');
+EUSART_Write('E');
+EUSART_Write('C');
+EUSART_Write('0');
+EUSART_Write('4');
+EUSART_Write('1');
+EUSART_Write('F');
+EUSART_Write('1');
+EUSART_Write('3');
+EUSART_Write('4');
+
+EUSART_Write(13);
+EUSART_Write(10);
+
+
+delay_ms(1000);
+}
+
+
+
+void WriteOnBt(unsigned int Val)
+{
+EUSART_Write ('!');
+EUSART_Write (',');
+EUSART_Write ('<');
+EUSART_Write ('0');
+EUSART_Write (',');
+EUSART_Write ('1');
+EUSART_Write ('>');
+
+
+EUSART_Write(13);
+EUSART_Write(10);
+
+
+
 
 }
-}
+void remote()
+{
+EUSART_Write ('!');
+EUSART_Write (',');
+EUSART_Write ('1');
 
+
+
+EUSART_Write(13);
+EUSART_Write(10);
+}

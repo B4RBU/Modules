@@ -57,8 +57,8 @@
  void PWM3_Initialize(void)
  {
     // Set the PWM to the options selected in the PIC10 / PIC12 / PIC16 / PIC18 MCUs.
-    // PWM3POL active_hi; PWM3OE enabled; PWM3EN enabled; 
-    PWM3CON = 0xC0;   
+    // PWM3POL active_hi; PWM3OE disabled; PWM3EN enabled; 
+    PWM3CON = 0x80;   
 
     // PWM3DCH 127; 
     PWM3DCH = 0x7F;   

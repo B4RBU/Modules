@@ -53,3 +53,9 @@ void init_B();
 int Verif_Erreur(char * buf, unsigned int size);
 void lecture();
 char ReturnReg();
+
+void WriteOnBt(unsigned int);
+void Scan(); 
+void StopScan();
+void connexion();
+void remote();

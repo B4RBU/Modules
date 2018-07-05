@@ -30,9 +30,17 @@ void main(void) {
    
     
     
-   initI2C();
+    initI2C();
     initRTC();
     init_B();
+    
+    
+    remote();
+    delay_ms(1000);
+    remote();
+    delay_ms(1000);
+    remote();
+    delay_ms(1000);
 while (1){    
     
     k = ReturnReg();
@@ -43,12 +51,45 @@ while (1){
     LED3 = !LED3;
     LED4 = !LED4;
     delay_ms(1000);
-
+     }
+     
+    
+    if ( bouton_GetValue() ==  0) 
+    {
+    
+          //  Bt = 1;
+            LED1 = 1 ;
+    EUSART_Write('$');
+    
+    
+    
+    EUSART_Write(10);
+    EUSART_Write(13);
+   
+            
+            
+                   
+    
+    }
+    else if (bouton_GetValue() == 1)
+        {
+           // Bt = 0;
+            LED1=0;
+           // EUSART_Write('é');
+    
+    
+    
+   // EUSART_Write(10);
+   // EUSART_Write(13);
+    
+            
+            
+        }
+    
 
 
 
 
     
-}
 }
 }

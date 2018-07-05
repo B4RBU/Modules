@@ -7,7 +7,6 @@
 
 
 #include <xc.h>
-#include "i2c.h"
 #include <stdint.h>
 
 void initI2C(void);

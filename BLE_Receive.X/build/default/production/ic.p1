@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"11241 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
+"11241 /opt/microchip/xc8/v1.45/include/pic16f1509.h
 [v _TRISB6 `Vb ~T0 @X0 0 e@1134 ]
 "10301
 [v _LATB6 `Vb ~T0 @X0 0 e@2158 ]
@@ -21,9 +21,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
 "3197
 [v _WPUB `Vuc ~T0 @X0 0 e@525 ]
-"83 i2c.h
+"14 ic.c
 [v _waitI2C `(v ~T0 @X0 0 ef ]
-"3696 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
+"3696 /opt/microchip/xc8/v1.45/include/pic16f1509.h
 [s S198 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S198 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
 "3695
@@ -45,7 +45,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1509.h: 50: extern volatile unsigned char INDF0 @ 0x000;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1509.h
+"52 /opt/microchip/xc8/v1.45/include/pic16f1509.h
 [; ;pic16f1509.h: 52: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16f1509.h: 55: typedef union {
@@ -3920,481 +3920,472 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;i2c.h: 81: void initI2C(void);
-[; ;i2c.h: 82: void startI2C();
-[; ;i2c.h: 83: void waitI2C();
-[; ;i2c.h: 84: void stopI2C();
-[; ;i2c.h: 85: void sendI2C(uint8_t);
-[; ;i2c.h: 86: uint8_t readI2C();
-[; ;i2c.h: 87: void re_startI2C();
-[; ;i2c.h: 88: void sendAckI2C();
-[; ;i2c.h: 89: void sendNoAckI2C();
-[; ;ic.c: 13: void initI2C(void);
-[; ;ic.c: 14: void startI2C();
-[; ;ic.c: 15: void waitI2C();
-[; ;ic.c: 16: void stopI2C();
-[; ;ic.c: 17: void sendI2C(uint8_t);
-[; ;ic.c: 18: uint8_t readI2C();
-[; ;ic.c: 19: void re_startI2C();
-[; ;ic.c: 20: void sendAckI2C();
-[; ;ic.c: 21: void sendNoAckI2C();
-[; ;ic.c: 22: uint8_t bitExtracted(uint8_t number, uint8_t k, uint8_t p);
-[; ;ic.c: 23: uint8_t convertFromBcd(uint8_t byteBCD);
-[; ;ic.c: 24: uint8_t FSM(uint8_t IN);
-[; ;ic.c: 25: void initRTC();
-[; ;ic.c: 26: void changeMin(uint8_t minute);
-[; ;ic.c: 27: void changeHeure(uint8_t heure);
-[; ;ic.c: 28: uint8_t readSec();
-[; ;ic.c: 29: uint8_t readMin();
-[; ;ic.c: 30: uint8_t readHr();
-[; ;ic.c: 31: void incrMin();
-[; ;ic.c: 32: void incrHeure();
-"33 ic.c
+[; ;ic.c: 12: void initI2C(void);
+[; ;ic.c: 13: void startI2C();
+[; ;ic.c: 14: void waitI2C();
+[; ;ic.c: 15: void stopI2C();
+[; ;ic.c: 16: void sendI2C(uint8_t);
+[; ;ic.c: 17: uint8_t readI2C();
+[; ;ic.c: 18: void re_startI2C();
+[; ;ic.c: 19: void sendAckI2C();
+[; ;ic.c: 20: void sendNoAckI2C();
+[; ;ic.c: 21: uint8_t bitExtracted(uint8_t number, uint8_t k, uint8_t p);
+[; ;ic.c: 22: uint8_t convertFromBcd(uint8_t byteBCD);
+[; ;ic.c: 23: uint8_t FSM(uint8_t IN);
+[; ;ic.c: 24: void initRTC();
+[; ;ic.c: 25: void changeMin(uint8_t minute);
+[; ;ic.c: 26: void changeHeure(uint8_t heure);
+[; ;ic.c: 27: uint8_t readSec();
+[; ;ic.c: 28: uint8_t readMin();
+[; ;ic.c: 29: uint8_t readHr();
+[; ;ic.c: 30: void incrMin();
+[; ;ic.c: 31: void incrHeure();
+"32 ic.c
 [v _initI2C `(v ~T0 @X0 1 ef ]
 {
-[; ;ic.c: 33: void initI2C() {
+[; ;ic.c: 32: void initI2C() {
 [e :U _initI2C ]
 [f ]
-"34
+"33
 [v _i `i ~T0 @X0 1 a ]
-[; ;ic.c: 34: int i = 0;
+[; ;ic.c: 33: int i = 0;
 [e = _i -> 0 `i ]
-[; ;ic.c: 39: TRISB6 = 0;
-"39
+[; ;ic.c: 38: TRISB6 = 0;
+"38
 [e = _TRISB6 -> -> 0 `i `b ]
-[; ;ic.c: 40: for (i = 0; i < 9; i++) {
-"40
+[; ;ic.c: 39: for (i = 0; i < 9; i++) {
+"39
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 9 `i 445  ]
 [e $U 446  ]
 [e :U 445 ]
 {
-[; ;ic.c: 41: LATB6 = 1;
-"41
-[e = _LATB6 -> -> 1 `i `b ]
-[; ;ic.c: 42: LATB6 = 0;
-"42
-[e = _LATB6 -> -> 0 `i `b ]
-"43
-}
+[; ;ic.c: 40: LATB6 = 1;
 "40
+[e = _LATB6 -> -> 1 `i `b ]
+[; ;ic.c: 41: LATB6 = 0;
+"41
+[e = _LATB6 -> -> 0 `i `b ]
+"42
+}
+"39
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 9 `i 445  ]
 [e :U 446 ]
-"43
+"42
 }
-[; ;ic.c: 43: }
-[; ;ic.c: 46: TRISB6 = 1;
-"46
+[; ;ic.c: 42: }
+[; ;ic.c: 45: TRISB6 = 1;
+"45
 [e = _TRISB6 -> -> 1 `i `b ]
-[; ;ic.c: 47: TRISB4 = 1;
-"47
+[; ;ic.c: 46: TRISB4 = 1;
+"46
 [e = _TRISB4 -> -> 1 `i `b ]
-[; ;ic.c: 50: ANSELB = 0x00;
-"50
+[; ;ic.c: 49: ANSELB = 0x00;
+"49
 [e = _ANSELB -> -> 0 `i `uc ]
-[; ;ic.c: 53: LATB4 = 1;
-"53
+[; ;ic.c: 52: LATB4 = 1;
+"52
 [e = _LATB4 -> -> 1 `i `b ]
-[; ;ic.c: 54: LATB6 = 1;
-"54
+[; ;ic.c: 53: LATB6 = 1;
+"53
 [e = _LATB6 -> -> 1 `i `b ]
-[; ;ic.c: 57: SSP1STAT = 0x80;
-"57
+[; ;ic.c: 56: SSP1STAT = 0x80;
+"56
 [e = _SSP1STAT -> -> 128 `i `uc ]
-[; ;ic.c: 58: SSP1CON1 = 0x28;
-"58
+[; ;ic.c: 57: SSP1CON1 = 0x28;
+"57
 [e = _SSP1CON1 -> -> 40 `i `uc ]
-[; ;ic.c: 59: SSP1CON2 = 0x00;
-"59
+[; ;ic.c: 58: SSP1CON2 = 0x00;
+"58
 [e = _SSP1CON2 -> -> 0 `i `uc ]
-[; ;ic.c: 60: SSP1ADD = 0x27;
-"60
+[; ;ic.c: 59: SSP1ADD = 0x27;
+"59
 [e = _SSP1ADD -> -> 39 `i `uc ]
-[; ;ic.c: 63: OPTION_REG = 0x0;
-"63
+[; ;ic.c: 62: OPTION_REG = 0x0;
+"62
 [e = _OPTION_REG -> -> 0 `i `uc ]
-[; ;ic.c: 64: WPUB = 0b00010000;
-"64
+[; ;ic.c: 63: WPUB = 0b00010000;
+"63
 [e = _WPUB -> -> 16 `i `uc ]
-[; ;ic.c: 66: }
-"66
+[; ;ic.c: 65: }
+"65
 [e :UE 444 ]
 }
-"68
+"67
 [v _startI2C `(v ~T0 @X0 1 ef ]
-"69
+"68
 {
-[; ;ic.c: 68: void startI2C()
-[; ;ic.c: 69: {
+[; ;ic.c: 67: void startI2C()
+[; ;ic.c: 68: {
 [e :U _startI2C ]
 [f ]
-[; ;ic.c: 70: waitI2C();
-"70
+[; ;ic.c: 69: waitI2C();
+"69
 [e ( _waitI2C ..  ]
-[; ;ic.c: 71: SSP1CON2=0b00000001;
-"71
+[; ;ic.c: 70: SSP1CON2=0b00000001;
+"70
 [e = _SSP1CON2 -> -> 1 `i `uc ]
-[; ;ic.c: 72: while(SSP1CON2bits.SEN == 1);
-"72
+[; ;ic.c: 71: while(SSP1CON2bits.SEN == 1);
+"71
 [e $U 449  ]
 [e :U 450 ]
 [e :U 449 ]
 [e $ == -> . . _SSP1CON2bits 0 0 `i -> 1 `i 450  ]
 [e :U 451 ]
-[; ;ic.c: 73: }
-"73
+[; ;ic.c: 72: }
+"72
 [e :UE 448 ]
 }
-"74
+"73
 [v _waitI2C `(v ~T0 @X0 1 ef ]
-"75
+"74
 {
-[; ;ic.c: 74: void waitI2C()
-[; ;ic.c: 75: {
+[; ;ic.c: 73: void waitI2C()
+[; ;ic.c: 74: {
 [e :U _waitI2C ]
 [f ]
-[; ;ic.c: 76: while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
-"76
+[; ;ic.c: 75: while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
+"75
 [e $U 453  ]
 [e :U 454 ]
 [e :U 453 ]
 [e $ || != & -> _SSP1STAT `i -> 4 `i -> 0 `i != & -> _SSP1CON2 `i -> 31 `i -> 0 `i 454  ]
 [e :U 455 ]
-[; ;ic.c: 77: }
-"77
+[; ;ic.c: 76: }
+"76
 [e :UE 452 ]
 }
-"78
+"77
 [v _stopI2C `(v ~T0 @X0 1 ef ]
-"79
+"78
 {
-[; ;ic.c: 78: void stopI2C()
-[; ;ic.c: 79: {
+[; ;ic.c: 77: void stopI2C()
+[; ;ic.c: 78: {
 [e :U _stopI2C ]
 [f ]
-[; ;ic.c: 80: waitI2C();
-"80
+[; ;ic.c: 79: waitI2C();
+"79
 [e ( _waitI2C ..  ]
-[; ;ic.c: 81: SSP1CON2bits.PEN = 1;
-"81
+[; ;ic.c: 80: SSP1CON2bits.PEN = 1;
+"80
 [e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
-[; ;ic.c: 82: while(SSP1CON2bits.PEN == 1);
-"82
+[; ;ic.c: 81: while(SSP1CON2bits.PEN == 1);
+"81
 [e $U 457  ]
 [e :U 458 ]
 [e :U 457 ]
 [e $ == -> . . _SSP1CON2bits 0 2 `i -> 1 `i 458  ]
 [e :U 459 ]
-[; ;ic.c: 83: }
-"83
+[; ;ic.c: 82: }
+"82
 [e :UE 456 ]
 }
-"84
+"83
 [v _sendI2C `(v ~T0 @X0 1 ef1`uc ]
-"85
-{
-[; ;ic.c: 84: void sendI2C(uint8_t data)
-[; ;ic.c: 85: {
-[e :U _sendI2C ]
 "84
+{
+[; ;ic.c: 83: void sendI2C(uint8_t data)
+[; ;ic.c: 84: {
+[e :U _sendI2C ]
+"83
 [v _data `uc ~T0 @X0 1 r1 ]
-"85
+"84
 [f ]
-[; ;ic.c: 86: waitI2C();
-"86
+[; ;ic.c: 85: waitI2C();
+"85
 [e ( _waitI2C ..  ]
-[; ;ic.c: 87: SSP1BUF = data;
-"87
+[; ;ic.c: 86: SSP1BUF = data;
+"86
 [e = _SSP1BUF _data ]
-[; ;ic.c: 88: PIR1bits.SSP1IF = 0;
-"88
+[; ;ic.c: 87: PIR1bits.SSP1IF = 0;
+"87
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;ic.c: 89: while(PIR1bits.SSP1IF == 0);
-"89
+[; ;ic.c: 88: while(PIR1bits.SSP1IF == 0);
+"88
 [e $U 461  ]
 [e :U 462 ]
 [e :U 461 ]
 [e $ == -> . . _PIR1bits 0 3 `i -> 0 `i 462  ]
 [e :U 463 ]
-[; ;ic.c: 90: }
-"90
+[; ;ic.c: 89: }
+"89
 [e :UE 460 ]
 }
-"92
+"91
 [v _readI2C `(uc ~T0 @X0 1 ef ]
-"93
+"92
 {
-[; ;ic.c: 92: uint8_t readI2C()
-[; ;ic.c: 93: {
+[; ;ic.c: 91: uint8_t readI2C()
+[; ;ic.c: 92: {
 [e :U _readI2C ]
 [f ]
-"94
+"93
 [v _temp `uc ~T0 @X0 1 a ]
-[; ;ic.c: 94: uint8_t temp;
-[; ;ic.c: 95: waitI2C();
+[; ;ic.c: 93: uint8_t temp;
+[; ;ic.c: 94: waitI2C();
+"94
+[e ( _waitI2C ..  ]
+[; ;ic.c: 95: SSP1CON2bits.RCEN = 1;
 "95
-[e ( _waitI2C ..  ]
-[; ;ic.c: 96: SSP1CON2bits.RCEN = 1;
-"96
 [e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
-[; ;ic.c: 97: waitI2C();
-"97
+[; ;ic.c: 96: waitI2C();
+"96
 [e ( _waitI2C ..  ]
-[; ;ic.c: 98: while(SSP1CON2bits.RCEN == 1);
-"98
+[; ;ic.c: 97: while(SSP1CON2bits.RCEN == 1);
+"97
 [e $U 465  ]
 [e :U 466 ]
 [e :U 465 ]
 [e $ == -> . . _SSP1CON2bits 0 3 `i -> 1 `i 466  ]
 [e :U 467 ]
-[; ;ic.c: 99: temp = SSP1BUF;
-"99
+[; ;ic.c: 98: temp = SSP1BUF;
+"98
 [e = _temp _SSP1BUF ]
-[; ;ic.c: 101: return temp;
-"101
+[; ;ic.c: 100: return temp;
+"100
 [e ) _temp ]
 [e $UE 464  ]
-[; ;ic.c: 102: }
-"102
+[; ;ic.c: 101: }
+"101
 [e :UE 464 ]
 }
-"103
+"102
 [v _re_startI2C `(v ~T0 @X0 1 ef ]
-"104
+"103
 {
-[; ;ic.c: 103: void re_startI2C()
-[; ;ic.c: 104: {
+[; ;ic.c: 102: void re_startI2C()
+[; ;ic.c: 103: {
 [e :U _re_startI2C ]
 [f ]
-[; ;ic.c: 105: waitI2C();
-"105
+[; ;ic.c: 104: waitI2C();
+"104
 [e ( _waitI2C ..  ]
-[; ;ic.c: 106: SSP1CON2bits.RSEN = 1;
-"106
+[; ;ic.c: 105: SSP1CON2bits.RSEN = 1;
+"105
 [e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
-[; ;ic.c: 107: while(SSP1CON2bits.RSEN == 1);
-"107
+[; ;ic.c: 106: while(SSP1CON2bits.RSEN == 1);
+"106
 [e $U 469  ]
 [e :U 470 ]
 [e :U 469 ]
 [e $ == -> . . _SSP1CON2bits 0 1 `i -> 1 `i 470  ]
 [e :U 471 ]
-[; ;ic.c: 108: }
-"108
+[; ;ic.c: 107: }
+"107
 [e :UE 468 ]
 }
-"109
+"108
 [v _sendAckI2C `(v ~T0 @X0 1 ef ]
-"110
+"109
 {
-[; ;ic.c: 109: void sendAckI2C()
-[; ;ic.c: 110: {
+[; ;ic.c: 108: void sendAckI2C()
+[; ;ic.c: 109: {
 [e :U _sendAckI2C ]
 [f ]
-[; ;ic.c: 111: waitI2C();
-"111
+[; ;ic.c: 110: waitI2C();
+"110
 [e ( _waitI2C ..  ]
-[; ;ic.c: 112: SSP1CON2bits.ACKDT = 0;
-"112
+[; ;ic.c: 111: SSP1CON2bits.ACKDT = 0;
+"111
 [e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
-[; ;ic.c: 113: SSP1CON2bits.ACKEN = 1;
-"113
+[; ;ic.c: 112: SSP1CON2bits.ACKEN = 1;
+"112
 [e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-[; ;ic.c: 114: }
-"114
+[; ;ic.c: 113: }
+"113
 [e :UE 472 ]
 }
-"116
+"115
 [v _sendNoAckI2C `(v ~T0 @X0 1 ef ]
-"117
+"116
 {
-[; ;ic.c: 116: void sendNoAckI2C()
-[; ;ic.c: 117: {
+[; ;ic.c: 115: void sendNoAckI2C()
+[; ;ic.c: 116: {
 [e :U _sendNoAckI2C ]
 [f ]
-[; ;ic.c: 118: waitI2C();
-"118
+[; ;ic.c: 117: waitI2C();
+"117
 [e ( _waitI2C ..  ]
-[; ;ic.c: 119: SSP1CON2bits.ACKDT = 1;
-"119
+[; ;ic.c: 118: SSP1CON2bits.ACKDT = 1;
+"118
 [e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
-[; ;ic.c: 120: SSP1CON2bits.ACKEN = 1;
-"120
+[; ;ic.c: 119: SSP1CON2bits.ACKEN = 1;
+"119
 [e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-[; ;ic.c: 121: }
-"121
+[; ;ic.c: 120: }
+"120
 [e :UE 473 ]
 }
-"122
+"121
 [v _bitExtracted `(uc ~T0 @X0 1 ef3`uc`uc`uc ]
 {
-[; ;ic.c: 122: uint8_t bitExtracted(uint8_t number, uint8_t k, uint8_t p) {
+[; ;ic.c: 121: uint8_t bitExtracted(uint8_t number, uint8_t k, uint8_t p) {
 [e :U _bitExtracted ]
 [v _number `uc ~T0 @X0 1 r1 ]
 [v _k `uc ~T0 @X0 1 r2 ]
 [v _p `uc ~T0 @X0 1 r3 ]
 [f ]
-[; ;ic.c: 123: return (((1 << k) - 1) & (number >> (p - 1)));
-"123
+[; ;ic.c: 122: return (((1 << k) - 1) & (number >> (p - 1)));
+"122
 [e ) -> & - << -> 1 `i _k -> 1 `i >> -> _number `i - -> _p `i -> 1 `i `uc ]
 [e $UE 474  ]
-[; ;ic.c: 124: }
-"124
+[; ;ic.c: 123: }
+"123
 [e :UE 474 ]
 }
-"126
+"125
 [v _convertFromBcd `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;ic.c: 126: uint8_t convertFromBcd(uint8_t byteBCD) {
+[; ;ic.c: 125: uint8_t convertFromBcd(uint8_t byteBCD) {
 [e :U _convertFromBcd ]
 [v _byteBCD `uc ~T0 @X0 1 r1 ]
 [f ]
-"127
+"126
 [v _byteMSB `uc ~T0 @X0 1 a ]
-[; ;ic.c: 127: uint8_t byteMSB = 0;
+[; ;ic.c: 126: uint8_t byteMSB = 0;
 [e = _byteMSB -> -> 0 `i `uc ]
-"128
+"127
 [v _byteLSB `uc ~T0 @X0 1 a ]
-[; ;ic.c: 128: uint8_t byteLSB = 0;
+[; ;ic.c: 127: uint8_t byteLSB = 0;
 [e = _byteLSB -> -> 0 `i `uc ]
-[; ;ic.c: 129: byteMSB = (byteBCD & 0b11110000) >> 4;
-"129
+[; ;ic.c: 128: byteMSB = (byteBCD & 0b11110000) >> 4;
+"128
 [e = _byteMSB -> >> & -> _byteBCD `i -> 240 `i -> 4 `i `uc ]
-[; ;ic.c: 130: byteLSB = (byteBCD & 0b00001111);
-"130
+[; ;ic.c: 129: byteLSB = (byteBCD & 0b00001111);
+"129
 [e = _byteLSB -> & -> _byteBCD `i -> 15 `i `uc ]
-[; ;ic.c: 131: return ((byteMSB * 10) + byteLSB);
-"131
+[; ;ic.c: 130: return ((byteMSB * 10) + byteLSB);
+"130
 [e ) -> + * -> _byteMSB `i -> 10 `i -> _byteLSB `i `uc ]
 [e $UE 475  ]
-[; ;ic.c: 132: }
-"132
+[; ;ic.c: 131: }
+"131
 [e :UE 475 ]
 }
-"134
+"133
 [v _FSM `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;ic.c: 134: uint8_t FSM(uint8_t IN) {
+[; ;ic.c: 133: uint8_t FSM(uint8_t IN) {
 [e :U _FSM ]
 [v _IN `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;ic.c: 135: switch (IN) {
-"135
+[; ;ic.c: 134: switch (IN) {
+"134
 [e $U 478  ]
 {
-[; ;ic.c: 136: case 0:
-"136
+[; ;ic.c: 135: case 0:
+"135
 [e :U 479 ]
-[; ;ic.c: 137: return '0';
-"137
+[; ;ic.c: 136: return '0';
+"136
 [e ) -> -> 48 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 138: break;
-"138
+[; ;ic.c: 137: break;
+"137
 [e $U 477  ]
-[; ;ic.c: 140: case 1:
-"140
+[; ;ic.c: 139: case 1:
+"139
 [e :U 480 ]
-[; ;ic.c: 141: return '1';
-"141
+[; ;ic.c: 140: return '1';
+"140
 [e ) -> -> 49 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 142: break;
-"142
+[; ;ic.c: 141: break;
+"141
 [e $U 477  ]
-[; ;ic.c: 144: case 2:
-"144
+[; ;ic.c: 143: case 2:
+"143
 [e :U 481 ]
-[; ;ic.c: 145: return '2';
-"145
+[; ;ic.c: 144: return '2';
+"144
 [e ) -> -> 50 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 146: break;
-"146
+[; ;ic.c: 145: break;
+"145
 [e $U 477  ]
-[; ;ic.c: 148: case 3:
-"148
+[; ;ic.c: 147: case 3:
+"147
 [e :U 482 ]
-[; ;ic.c: 149: return '3';
-"149
+[; ;ic.c: 148: return '3';
+"148
 [e ) -> -> 51 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 150: break;
-"150
+[; ;ic.c: 149: break;
+"149
 [e $U 477  ]
-[; ;ic.c: 152: case 4:
-"152
+[; ;ic.c: 151: case 4:
+"151
 [e :U 483 ]
-[; ;ic.c: 153: return '4';
-"153
+[; ;ic.c: 152: return '4';
+"152
 [e ) -> -> 52 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 154: break;
-"154
+[; ;ic.c: 153: break;
+"153
 [e $U 477  ]
-[; ;ic.c: 156: case 5:
-"156
+[; ;ic.c: 155: case 5:
+"155
 [e :U 484 ]
-[; ;ic.c: 157: return '5';
-"157
+[; ;ic.c: 156: return '5';
+"156
 [e ) -> -> 53 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 158: break;
-"158
+[; ;ic.c: 157: break;
+"157
 [e $U 477  ]
-[; ;ic.c: 160: case 6:
-"160
+[; ;ic.c: 159: case 6:
+"159
 [e :U 485 ]
-[; ;ic.c: 161: return '6';
-"161
+[; ;ic.c: 160: return '6';
+"160
 [e ) -> -> 54 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 162: break;
-"162
+[; ;ic.c: 161: break;
+"161
 [e $U 477  ]
-[; ;ic.c: 164: case 7:
-"164
+[; ;ic.c: 163: case 7:
+"163
 [e :U 486 ]
-[; ;ic.c: 165: return '7';
-"165
+[; ;ic.c: 164: return '7';
+"164
 [e ) -> -> 55 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 166: break;
-"166
+[; ;ic.c: 165: break;
+"165
 [e $U 477  ]
-[; ;ic.c: 168: case 8:
-"168
+[; ;ic.c: 167: case 8:
+"167
 [e :U 487 ]
-[; ;ic.c: 169: return '8';
-"169
+[; ;ic.c: 168: return '8';
+"168
 [e ) -> -> 56 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 170: break;
-"170
+[; ;ic.c: 169: break;
+"169
 [e $U 477  ]
-[; ;ic.c: 172: case 9:
-"172
+[; ;ic.c: 171: case 9:
+"171
 [e :U 488 ]
-[; ;ic.c: 173: return '9';
-"173
+[; ;ic.c: 172: return '9';
+"172
 [e ) -> -> 57 `ui `uc ]
 [e $UE 476  ]
-[; ;ic.c: 174: break;
-"174
+[; ;ic.c: 173: break;
+"173
 [e $U 477  ]
-[; ;ic.c: 176: default:
-"176
+[; ;ic.c: 175: default:
+"175
 [e :U 489 ]
-[; ;ic.c: 177: break;
-"177
+[; ;ic.c: 176: break;
+"176
 [e $U 477  ]
-"179
+"178
 }
-[; ;ic.c: 179: }
+[; ;ic.c: 178: }
 [e $U 477  ]
-"135
+"134
 [e :U 478 ]
 [e [\ _IN , $ -> -> 0 `i `uc 479
  , $ -> -> 1 `i `uc 480
@@ -4407,584 +4398,584 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 8 `i `uc 487
  , $ -> -> 9 `i `uc 488
  489 ]
-"179
+"178
 [e :U 477 ]
-[; ;ic.c: 180: }
-"180
+[; ;ic.c: 179: }
+"179
 [e :UE 476 ]
 }
-"181
+"180
 [v _initRTC `(v ~T0 @X0 1 ef ]
 {
-[; ;ic.c: 181: void initRTC() {
+[; ;ic.c: 180: void initRTC() {
 [e :U _initRTC ]
 [f ]
-[; ;ic.c: 182: startI2C();
-"182
+[; ;ic.c: 181: startI2C();
+"181
 [e ( _startI2C ..  ]
-[; ;ic.c: 183: sendI2C(0b11011110);
-"183
+[; ;ic.c: 182: sendI2C(0b11011110);
+"182
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 184: while (SSP1CON2bits.ACKSTAT == 1);
-"184
+[; ;ic.c: 183: while (SSP1CON2bits.ACKSTAT == 1);
+"183
 [e $U 491  ]
 [e :U 492 ]
 [e :U 491 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 492  ]
 [e :U 493 ]
-[; ;ic.c: 185: sendI2C(0x00);
-"185
+[; ;ic.c: 184: sendI2C(0x00);
+"184
 [e ( _sendI2C (1 -> -> 0 `i `uc ]
-[; ;ic.c: 186: while (SSP1CON2bits.ACKSTAT == 1);
-"186
+[; ;ic.c: 185: while (SSP1CON2bits.ACKSTAT == 1);
+"185
 [e $U 494  ]
 [e :U 495 ]
 [e :U 494 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 495  ]
 [e :U 496 ]
-[; ;ic.c: 187: sendI2C(0b10000000);
-"187
+[; ;ic.c: 186: sendI2C(0b10000000);
+"186
 [e ( _sendI2C (1 -> -> 128 `i `uc ]
-[; ;ic.c: 188: while (SSP1CON2bits.ACKSTAT == 1);
-"188
+[; ;ic.c: 187: while (SSP1CON2bits.ACKSTAT == 1);
+"187
 [e $U 497  ]
 [e :U 498 ]
 [e :U 497 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 498  ]
 [e :U 499 ]
-[; ;ic.c: 189: stopI2C();
-"189
+[; ;ic.c: 188: stopI2C();
+"188
 [e ( _stopI2C ..  ]
-[; ;ic.c: 191: startI2C();
-"191
+[; ;ic.c: 190: startI2C();
+"190
 [e ( _startI2C ..  ]
-[; ;ic.c: 192: sendI2C(0b11011110);
-"192
+[; ;ic.c: 191: sendI2C(0b11011110);
+"191
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 193: while (SSP1CON2bits.ACKSTAT == 1);
-"193
+[; ;ic.c: 192: while (SSP1CON2bits.ACKSTAT == 1);
+"192
 [e $U 500  ]
 [e :U 501 ]
 [e :U 500 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 501  ]
 [e :U 502 ]
-[; ;ic.c: 194: sendI2C(0x01);
-"194
+[; ;ic.c: 193: sendI2C(0x01);
+"193
 [e ( _sendI2C (1 -> -> 1 `i `uc ]
-[; ;ic.c: 195: while (SSP1CON2bits.ACKSTAT == 1);
-"195
+[; ;ic.c: 194: while (SSP1CON2bits.ACKSTAT == 1);
+"194
 [e $U 503  ]
 [e :U 504 ]
 [e :U 503 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 504  ]
 [e :U 505 ]
-[; ;ic.c: 196: sendI2C(0b01001000);
-"196
+[; ;ic.c: 195: sendI2C(0b01001000);
+"195
 [e ( _sendI2C (1 -> -> 72 `i `uc ]
-[; ;ic.c: 197: while (SSP1CON2bits.ACKSTAT == 1);
-"197
+[; ;ic.c: 196: while (SSP1CON2bits.ACKSTAT == 1);
+"196
 [e $U 506  ]
 [e :U 507 ]
 [e :U 506 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 507  ]
 [e :U 508 ]
-[; ;ic.c: 198: stopI2C();
-"198
+[; ;ic.c: 197: stopI2C();
+"197
 [e ( _stopI2C ..  ]
-[; ;ic.c: 200: startI2C();
-"200
+[; ;ic.c: 199: startI2C();
+"199
 [e ( _startI2C ..  ]
-[; ;ic.c: 201: sendI2C(0b11011110);
-"201
+[; ;ic.c: 200: sendI2C(0b11011110);
+"200
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 202: while (SSP1CON2bits.ACKSTAT == 1);
-"202
+[; ;ic.c: 201: while (SSP1CON2bits.ACKSTAT == 1);
+"201
 [e $U 509  ]
 [e :U 510 ]
 [e :U 509 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 510  ]
 [e :U 511 ]
-[; ;ic.c: 203: sendI2C(0x02);
-"203
+[; ;ic.c: 202: sendI2C(0x02);
+"202
 [e ( _sendI2C (1 -> -> 2 `i `uc ]
-[; ;ic.c: 204: while (SSP1CON2bits.ACKSTAT == 1);
-"204
+[; ;ic.c: 203: while (SSP1CON2bits.ACKSTAT == 1);
+"203
 [e $U 512  ]
 [e :U 513 ]
 [e :U 512 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 513  ]
 [e :U 514 ]
-[; ;ic.c: 205: sendI2C(0b00010100);
-"205
+[; ;ic.c: 204: sendI2C(0b00010100);
+"204
 [e ( _sendI2C (1 -> -> 20 `i `uc ]
-[; ;ic.c: 206: while (SSP1CON2bits.ACKSTAT == 1);
-"206
+[; ;ic.c: 205: while (SSP1CON2bits.ACKSTAT == 1);
+"205
 [e $U 515  ]
 [e :U 516 ]
 [e :U 515 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 516  ]
 [e :U 517 ]
-[; ;ic.c: 207: stopI2C();
-"207
+[; ;ic.c: 206: stopI2C();
+"206
 [e ( _stopI2C ..  ]
-[; ;ic.c: 208: }
-"208
+[; ;ic.c: 207: }
+"207
 [e :UE 490 ]
 }
-"210
+"209
 [v _changeMin `(v ~T0 @X0 1 ef1`uc ]
-"211
-{
-[; ;ic.c: 210: void changeMin(uint8_t minute)
-[; ;ic.c: 211: {
-[e :U _changeMin ]
 "210
+{
+[; ;ic.c: 209: void changeMin(uint8_t minute)
+[; ;ic.c: 210: {
+[e :U _changeMin ]
+"209
 [v _minute `uc ~T0 @X0 1 r1 ]
-"211
+"210
 [f ]
-[; ;ic.c: 212: startI2C();
-"212
+[; ;ic.c: 211: startI2C();
+"211
 [e ( _startI2C ..  ]
-[; ;ic.c: 213: sendI2C(0b11011110);
-"213
+[; ;ic.c: 212: sendI2C(0b11011110);
+"212
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 214: while (SSP1CON2bits.ACKSTAT == 1);
-"214
+[; ;ic.c: 213: while (SSP1CON2bits.ACKSTAT == 1);
+"213
 [e $U 519  ]
 [e :U 520 ]
 [e :U 519 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 520  ]
 [e :U 521 ]
-[; ;ic.c: 215: sendI2C(0x01);
-"215
+[; ;ic.c: 214: sendI2C(0x01);
+"214
 [e ( _sendI2C (1 -> -> 1 `i `uc ]
-[; ;ic.c: 216: while (SSP1CON2bits.ACKSTAT == 1);
-"216
+[; ;ic.c: 215: while (SSP1CON2bits.ACKSTAT == 1);
+"215
 [e $U 522  ]
 [e :U 523 ]
 [e :U 522 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 523  ]
 [e :U 524 ]
-[; ;ic.c: 217: sendI2C(minute);
-"217
+[; ;ic.c: 216: sendI2C(minute);
+"216
 [e ( _sendI2C (1 _minute ]
-[; ;ic.c: 218: while (SSP1CON2bits.ACKSTAT == 1);
-"218
+[; ;ic.c: 217: while (SSP1CON2bits.ACKSTAT == 1);
+"217
 [e $U 525  ]
 [e :U 526 ]
 [e :U 525 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 526  ]
 [e :U 527 ]
-[; ;ic.c: 219: stopI2C();
-"219
+[; ;ic.c: 218: stopI2C();
+"218
 [e ( _stopI2C ..  ]
-[; ;ic.c: 220: }
-"220
+[; ;ic.c: 219: }
+"219
 [e :UE 518 ]
 }
-"222
+"221
 [v _changeHeure `(v ~T0 @X0 1 ef1`uc ]
-"223
-{
-[; ;ic.c: 222: void changeHeure(uint8_t heure)
-[; ;ic.c: 223: {
-[e :U _changeHeure ]
 "222
+{
+[; ;ic.c: 221: void changeHeure(uint8_t heure)
+[; ;ic.c: 222: {
+[e :U _changeHeure ]
+"221
 [v _heure `uc ~T0 @X0 1 r1 ]
-"223
+"222
 [f ]
-[; ;ic.c: 224: startI2C();
-"224
+[; ;ic.c: 223: startI2C();
+"223
 [e ( _startI2C ..  ]
-[; ;ic.c: 225: sendI2C(0b11011110);
-"225
+[; ;ic.c: 224: sendI2C(0b11011110);
+"224
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 226: while (SSP1CON2bits.ACKSTAT == 1);
-"226
+[; ;ic.c: 225: while (SSP1CON2bits.ACKSTAT == 1);
+"225
 [e $U 529  ]
 [e :U 530 ]
 [e :U 529 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 530  ]
 [e :U 531 ]
-[; ;ic.c: 227: sendI2C(0x02);
-"227
+[; ;ic.c: 226: sendI2C(0x02);
+"226
 [e ( _sendI2C (1 -> -> 2 `i `uc ]
-[; ;ic.c: 228: while (SSP1CON2bits.ACKSTAT == 1);
-"228
+[; ;ic.c: 227: while (SSP1CON2bits.ACKSTAT == 1);
+"227
 [e $U 532  ]
 [e :U 533 ]
 [e :U 532 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 533  ]
 [e :U 534 ]
-[; ;ic.c: 229: sendI2C(heure);
-"229
+[; ;ic.c: 228: sendI2C(heure);
+"228
 [e ( _sendI2C (1 _heure ]
-[; ;ic.c: 230: while (SSP1CON2bits.ACKSTAT == 1);
-"230
+[; ;ic.c: 229: while (SSP1CON2bits.ACKSTAT == 1);
+"229
 [e $U 535  ]
 [e :U 536 ]
 [e :U 535 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 536  ]
 [e :U 537 ]
-[; ;ic.c: 231: stopI2C();
-"231
+[; ;ic.c: 230: stopI2C();
+"230
 [e ( _stopI2C ..  ]
-[; ;ic.c: 232: }
-"232
+[; ;ic.c: 231: }
+"231
 [e :UE 528 ]
 }
-"234
+"233
 [v _readSec `(uc ~T0 @X0 1 ef ]
 {
-[; ;ic.c: 234: uint8_t readSec() {
+[; ;ic.c: 233: uint8_t readSec() {
 [e :U _readSec ]
 [f ]
-"235
+"234
 [v _second `uc ~T0 @X0 1 a ]
-[; ;ic.c: 235: uint8_t second = 0;
+[; ;ic.c: 234: uint8_t second = 0;
 [e = _second -> -> 0 `i `uc ]
-[; ;ic.c: 236: startI2C();
-"236
+[; ;ic.c: 235: startI2C();
+"235
 [e ( _startI2C ..  ]
-[; ;ic.c: 237: sendI2C(0b11011110);
-"237
+[; ;ic.c: 236: sendI2C(0b11011110);
+"236
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 238: while (SSP1CON2bits.ACKSTAT == 1);
-"238
+[; ;ic.c: 237: while (SSP1CON2bits.ACKSTAT == 1);
+"237
 [e $U 539  ]
 [e :U 540 ]
 [e :U 539 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 540  ]
 [e :U 541 ]
-[; ;ic.c: 239: sendI2C(0x00);
-"239
+[; ;ic.c: 238: sendI2C(0x00);
+"238
 [e ( _sendI2C (1 -> -> 0 `i `uc ]
-[; ;ic.c: 240: while (SSP1CON2bits.ACKSTAT == 1);
-"240
+[; ;ic.c: 239: while (SSP1CON2bits.ACKSTAT == 1);
+"239
 [e $U 542  ]
 [e :U 543 ]
 [e :U 542 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 543  ]
 [e :U 544 ]
-[; ;ic.c: 241: re_startI2C();
-"241
+[; ;ic.c: 240: re_startI2C();
+"240
 [e ( _re_startI2C ..  ]
-[; ;ic.c: 242: sendI2C(0b11011111);
-"242
+[; ;ic.c: 241: sendI2C(0b11011111);
+"241
 [e ( _sendI2C (1 -> -> 223 `i `uc ]
-[; ;ic.c: 243: while (SSP1CON2bits.ACKSTAT == 1);
-"243
+[; ;ic.c: 242: while (SSP1CON2bits.ACKSTAT == 1);
+"242
 [e $U 545  ]
 [e :U 546 ]
 [e :U 545 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 546  ]
 [e :U 547 ]
-[; ;ic.c: 244: second = readI2C();
-"244
+[; ;ic.c: 243: second = readI2C();
+"243
 [e = _second ( _readI2C ..  ]
-[; ;ic.c: 245: sendNoAckI2C();
-"245
+[; ;ic.c: 244: sendNoAckI2C();
+"244
 [e ( _sendNoAckI2C ..  ]
-[; ;ic.c: 246: stopI2C();
-"246
+[; ;ic.c: 245: stopI2C();
+"245
 [e ( _stopI2C ..  ]
-[; ;ic.c: 247: return second;
-"247
+[; ;ic.c: 246: return second;
+"246
 [e ) _second ]
 [e $UE 538  ]
-[; ;ic.c: 248: }
-"248
+[; ;ic.c: 247: }
+"247
 [e :UE 538 ]
 }
-"250
+"249
 [v _readMin `(uc ~T0 @X0 1 ef ]
 {
-[; ;ic.c: 250: uint8_t readMin() {
+[; ;ic.c: 249: uint8_t readMin() {
 [e :U _readMin ]
 [f ]
-"251
+"250
 [v _minute `uc ~T0 @X0 1 a ]
-[; ;ic.c: 251: uint8_t minute = 0;
+[; ;ic.c: 250: uint8_t minute = 0;
 [e = _minute -> -> 0 `i `uc ]
-[; ;ic.c: 252: startI2C();
-"252
+[; ;ic.c: 251: startI2C();
+"251
 [e ( _startI2C ..  ]
-[; ;ic.c: 253: sendI2C(0b11011110);
-"253
+[; ;ic.c: 252: sendI2C(0b11011110);
+"252
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 254: while (SSP1CON2bits.ACKSTAT == 1);
-"254
+[; ;ic.c: 253: while (SSP1CON2bits.ACKSTAT == 1);
+"253
 [e $U 549  ]
 [e :U 550 ]
 [e :U 549 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 550  ]
 [e :U 551 ]
-[; ;ic.c: 255: sendI2C(0x01);
-"255
+[; ;ic.c: 254: sendI2C(0x01);
+"254
 [e ( _sendI2C (1 -> -> 1 `i `uc ]
-[; ;ic.c: 256: while (SSP1CON2bits.ACKSTAT == 1);
-"256
+[; ;ic.c: 255: while (SSP1CON2bits.ACKSTAT == 1);
+"255
 [e $U 552  ]
 [e :U 553 ]
 [e :U 552 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 553  ]
 [e :U 554 ]
-[; ;ic.c: 257: re_startI2C();
-"257
+[; ;ic.c: 256: re_startI2C();
+"256
 [e ( _re_startI2C ..  ]
-[; ;ic.c: 258: sendI2C(0b11011111);
-"258
+[; ;ic.c: 257: sendI2C(0b11011111);
+"257
 [e ( _sendI2C (1 -> -> 223 `i `uc ]
-[; ;ic.c: 259: while (SSP1CON2bits.ACKSTAT == 1);
-"259
+[; ;ic.c: 258: while (SSP1CON2bits.ACKSTAT == 1);
+"258
 [e $U 555  ]
 [e :U 556 ]
 [e :U 555 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 556  ]
 [e :U 557 ]
-[; ;ic.c: 260: minute = readI2C();
-"260
+[; ;ic.c: 259: minute = readI2C();
+"259
 [e = _minute ( _readI2C ..  ]
-[; ;ic.c: 261: sendNoAckI2C();
-"261
+[; ;ic.c: 260: sendNoAckI2C();
+"260
 [e ( _sendNoAckI2C ..  ]
-[; ;ic.c: 262: stopI2C();
-"262
+[; ;ic.c: 261: stopI2C();
+"261
 [e ( _stopI2C ..  ]
-[; ;ic.c: 263: return minute;
-"263
+[; ;ic.c: 262: return minute;
+"262
 [e ) _minute ]
 [e $UE 548  ]
-[; ;ic.c: 264: }
-"264
+[; ;ic.c: 263: }
+"263
 [e :UE 548 ]
 }
-"266
+"265
 [v _readHr `(uc ~T0 @X0 1 ef ]
 {
-[; ;ic.c: 266: uint8_t readHr() {
+[; ;ic.c: 265: uint8_t readHr() {
 [e :U _readHr ]
 [f ]
-"267
+"266
 [v _heure `uc ~T0 @X0 1 a ]
-[; ;ic.c: 267: uint8_t heure = 0;
+[; ;ic.c: 266: uint8_t heure = 0;
 [e = _heure -> -> 0 `i `uc ]
-[; ;ic.c: 268: startI2C();
-"268
+[; ;ic.c: 267: startI2C();
+"267
 [e ( _startI2C ..  ]
-[; ;ic.c: 269: sendI2C(0b11011110);
-"269
+[; ;ic.c: 268: sendI2C(0b11011110);
+"268
 [e ( _sendI2C (1 -> -> 222 `i `uc ]
-[; ;ic.c: 270: while (SSP1CON2bits.ACKSTAT == 1);
-"270
+[; ;ic.c: 269: while (SSP1CON2bits.ACKSTAT == 1);
+"269
 [e $U 559  ]
 [e :U 560 ]
 [e :U 559 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 560  ]
 [e :U 561 ]
-[; ;ic.c: 271: sendI2C(0x02);
-"271
+[; ;ic.c: 270: sendI2C(0x02);
+"270
 [e ( _sendI2C (1 -> -> 2 `i `uc ]
-[; ;ic.c: 272: while (SSP1CON2bits.ACKSTAT == 1);
-"272
+[; ;ic.c: 271: while (SSP1CON2bits.ACKSTAT == 1);
+"271
 [e $U 562  ]
 [e :U 563 ]
 [e :U 562 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 563  ]
 [e :U 564 ]
-[; ;ic.c: 273: re_startI2C();
-"273
+[; ;ic.c: 272: re_startI2C();
+"272
 [e ( _re_startI2C ..  ]
-[; ;ic.c: 274: sendI2C(0b11011111);
-"274
+[; ;ic.c: 273: sendI2C(0b11011111);
+"273
 [e ( _sendI2C (1 -> -> 223 `i `uc ]
-[; ;ic.c: 275: while (SSP1CON2bits.ACKSTAT == 1);
-"275
+[; ;ic.c: 274: while (SSP1CON2bits.ACKSTAT == 1);
+"274
 [e $U 565  ]
 [e :U 566 ]
 [e :U 565 ]
 [e $ == -> . . _SSP1CON2bits 0 6 `i -> 1 `i 566  ]
 [e :U 567 ]
-[; ;ic.c: 276: heure = readI2C();
-"276
+[; ;ic.c: 275: heure = readI2C();
+"275
 [e = _heure ( _readI2C ..  ]
-[; ;ic.c: 277: sendNoAckI2C();
-"277
+[; ;ic.c: 276: sendNoAckI2C();
+"276
 [e ( _sendNoAckI2C ..  ]
-[; ;ic.c: 278: stopI2C();
-"278
+[; ;ic.c: 277: stopI2C();
+"277
 [e ( _stopI2C ..  ]
-[; ;ic.c: 279: return heure;
-"279
+[; ;ic.c: 278: return heure;
+"278
 [e ) _heure ]
 [e $UE 558  ]
-[; ;ic.c: 280: }
-"280
+[; ;ic.c: 279: }
+"279
 [e :UE 558 ]
 }
-"284
+"283
 [v _incrMin `(v ~T0 @X0 1 ef ]
-"285
+"284
 {
-[; ;ic.c: 284: void incrMin()
-[; ;ic.c: 285: {
+[; ;ic.c: 283: void incrMin()
+[; ;ic.c: 284: {
 [e :U _incrMin ]
 [f ]
-"286
+"285
 [v _minute `uc ~T0 @X0 1 a ]
-[; ;ic.c: 286: uint8_t minute=0;
+[; ;ic.c: 285: uint8_t minute=0;
 [e = _minute -> -> 0 `i `uc ]
-"287
+"286
 [v _dizaineM `uc ~T0 @X0 1 a ]
-[; ;ic.c: 287: uint8_t dizaineM=0;
+[; ;ic.c: 286: uint8_t dizaineM=0;
 [e = _dizaineM -> -> 0 `i `uc ]
-"288
+"287
 [v _uniteM `uc ~T0 @X0 1 a ]
-[; ;ic.c: 288: uint8_t uniteM=0;
+[; ;ic.c: 287: uint8_t uniteM=0;
 [e = _uniteM -> -> 0 `i `uc ]
-[; ;ic.c: 289: minute = readMin();
-"289
+[; ;ic.c: 288: minute = readMin();
+"288
 [e = _minute ( _readMin ..  ]
-[; ;ic.c: 290: uniteM = bitExtracted(minute, 4, 1);
-"290
+[; ;ic.c: 289: uniteM = bitExtracted(minute, 4, 1);
+"289
 [e = _uniteM ( _bitExtracted (3 , , _minute -> -> 4 `i `uc -> -> 1 `i `uc ]
-[; ;ic.c: 291: dizaineM = bitExtracted(minute, 3, 5);
-"291
+[; ;ic.c: 290: dizaineM = bitExtracted(minute, 3, 5);
+"290
 [e = _dizaineM ( _bitExtracted (3 , , _minute -> -> 3 `i `uc -> -> 5 `i `uc ]
-[; ;ic.c: 292: minute=0;
-"292
+[; ;ic.c: 291: minute=0;
+"291
 [e = _minute -> -> 0 `i `uc ]
-[; ;ic.c: 293: uniteM=uniteM+1;
-"293
+[; ;ic.c: 292: uniteM=uniteM+1;
+"292
 [e = _uniteM -> + -> _uniteM `i -> 1 `i `uc ]
-[; ;ic.c: 294: if(uniteM>9)
-"294
+[; ;ic.c: 293: if(uniteM>9)
+"293
 [e $ ! > -> _uniteM `i -> 9 `i 569  ]
-[; ;ic.c: 295: {
-"295
+[; ;ic.c: 294: {
+"294
 {
-[; ;ic.c: 296: uniteM=0;
-"296
+[; ;ic.c: 295: uniteM=0;
+"295
 [e = _uniteM -> -> 0 `i `uc ]
-[; ;ic.c: 297: dizaineM=dizaineM+1;
-"297
+[; ;ic.c: 296: dizaineM=dizaineM+1;
+"296
 [e = _dizaineM -> + -> _dizaineM `i -> 1 `i `uc ]
-"298
+"297
 }
 [e :U 569 ]
-[; ;ic.c: 298: }
-[; ;ic.c: 299: if(dizaineM>6)
-"299
+[; ;ic.c: 297: }
+[; ;ic.c: 298: if(dizaineM>6)
+"298
 [e $ ! > -> _dizaineM `i -> 6 `i 570  ]
-[; ;ic.c: 300: {
-"300
+[; ;ic.c: 299: {
+"299
 {
-[; ;ic.c: 301: dizaineM=0;
-"301
+[; ;ic.c: 300: dizaineM=0;
+"300
 [e = _dizaineM -> -> 0 `i `uc ]
-[; ;ic.c: 302: uniteM=0;
-"302
+[; ;ic.c: 301: uniteM=0;
+"301
 [e = _uniteM -> -> 0 `i `uc ]
-"303
+"302
 }
 [e :U 570 ]
-[; ;ic.c: 303: }
-[; ;ic.c: 304: minute=minute+dizaineM;
-"304
+[; ;ic.c: 302: }
+[; ;ic.c: 303: minute=minute+dizaineM;
+"303
 [e = _minute -> + -> _minute `i -> _dizaineM `i `uc ]
-[; ;ic.c: 305: minute=minute<<4;
-"305
+[; ;ic.c: 304: minute=minute<<4;
+"304
 [e = _minute -> << -> _minute `i -> 4 `i `uc ]
-[; ;ic.c: 306: minute=minute+uniteM;
-"306
+[; ;ic.c: 305: minute=minute+uniteM;
+"305
 [e = _minute -> + -> _minute `i -> _uniteM `i `uc ]
-[; ;ic.c: 307: changeMin(minute);
-"307
+[; ;ic.c: 306: changeMin(minute);
+"306
 [e ( _changeMin (1 _minute ]
-[; ;ic.c: 308: }
-"308
+[; ;ic.c: 307: }
+"307
 [e :UE 568 ]
 }
-"310
+"309
 [v _incrHeure `(v ~T0 @X0 1 ef ]
-"311
+"310
 {
-[; ;ic.c: 310: void incrHeure()
-[; ;ic.c: 311: {
+[; ;ic.c: 309: void incrHeure()
+[; ;ic.c: 310: {
 [e :U _incrHeure ]
 [f ]
-"312
+"311
 [v _heure `uc ~T0 @X0 1 a ]
-[; ;ic.c: 312: uint8_t heure=0;
+[; ;ic.c: 311: uint8_t heure=0;
 [e = _heure -> -> 0 `i `uc ]
-"313
+"312
 [v _dizaineH `uc ~T0 @X0 1 a ]
-[; ;ic.c: 313: uint8_t dizaineH=0;
+[; ;ic.c: 312: uint8_t dizaineH=0;
 [e = _dizaineH -> -> 0 `i `uc ]
-"314
+"313
 [v _uniteH `uc ~T0 @X0 1 a ]
-[; ;ic.c: 314: uint8_t uniteH=0;
+[; ;ic.c: 313: uint8_t uniteH=0;
 [e = _uniteH -> -> 0 `i `uc ]
-[; ;ic.c: 315: heure = readHr();
-"315
+[; ;ic.c: 314: heure = readHr();
+"314
 [e = _heure ( _readHr ..  ]
-[; ;ic.c: 316: uniteH = bitExtracted(heure, 4, 1);
-"316
+[; ;ic.c: 315: uniteH = bitExtracted(heure, 4, 1);
+"315
 [e = _uniteH ( _bitExtracted (3 , , _heure -> -> 4 `i `uc -> -> 1 `i `uc ]
-[; ;ic.c: 317: dizaineH = bitExtracted(heure, 2, 5);
-"317
+[; ;ic.c: 316: dizaineH = bitExtracted(heure, 2, 5);
+"316
 [e = _dizaineH ( _bitExtracted (3 , , _heure -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;ic.c: 318: heure=0;
-"318
+[; ;ic.c: 317: heure=0;
+"317
 [e = _heure -> -> 0 `i `uc ]
-[; ;ic.c: 319: uniteH=uniteH+1;
-"319
+[; ;ic.c: 318: uniteH=uniteH+1;
+"318
 [e = _uniteH -> + -> _uniteH `i -> 1 `i `uc ]
-[; ;ic.c: 320: if(uniteH>9)
-"320
+[; ;ic.c: 319: if(uniteH>9)
+"319
 [e $ ! > -> _uniteH `i -> 9 `i 572  ]
-[; ;ic.c: 321: {
-"321
+[; ;ic.c: 320: {
+"320
 {
-[; ;ic.c: 322: uniteH=0;
-"322
+[; ;ic.c: 321: uniteH=0;
+"321
 [e = _uniteH -> -> 0 `i `uc ]
-[; ;ic.c: 323: dizaineH=dizaineH+1;
-"323
+[; ;ic.c: 322: dizaineH=dizaineH+1;
+"322
 [e = _dizaineH -> + -> _dizaineH `i -> 1 `i `uc ]
-"324
+"323
 }
 [e :U 572 ]
-[; ;ic.c: 324: }
-[; ;ic.c: 325: if(dizaineH>2 && uniteH==4)
-"325
+[; ;ic.c: 323: }
+[; ;ic.c: 324: if(dizaineH>2 && uniteH==4)
+"324
 [e $ ! && > -> _dizaineH `i -> 2 `i == -> _uniteH `i -> 4 `i 573  ]
-[; ;ic.c: 326: {
-"326
+[; ;ic.c: 325: {
+"325
 {
-[; ;ic.c: 327: dizaineH=0;
-"327
+[; ;ic.c: 326: dizaineH=0;
+"326
 [e = _dizaineH -> -> 0 `i `uc ]
-[; ;ic.c: 328: uniteH=uniteH+1;
-"328
+[; ;ic.c: 327: uniteH=uniteH+1;
+"327
 [e = _uniteH -> + -> _uniteH `i -> 1 `i `uc ]
-"329
+"328
 }
 [e :U 573 ]
-[; ;ic.c: 329: }
-[; ;ic.c: 330: heure=heure+dizaineH;
-"330
+[; ;ic.c: 328: }
+[; ;ic.c: 329: heure=heure+dizaineH;
+"329
 [e = _heure -> + -> _heure `i -> _dizaineH `i `uc ]
-[; ;ic.c: 331: heure=heure<<4;
-"331
+[; ;ic.c: 330: heure=heure<<4;
+"330
 [e = _heure -> << -> _heure `i -> 4 `i `uc ]
-[; ;ic.c: 332: heure=heure+uniteH;
-"332
+[; ;ic.c: 331: heure=heure+uniteH;
+"331
 [e = _heure -> + -> _heure `i -> _uniteH `i `uc ]
-[; ;ic.c: 333: changeHeure(heure);
-"333
+[; ;ic.c: 332: changeHeure(heure);
+"332
 [e ( _changeHeure (1 _heure ]
-[; ;ic.c: 334: }
-"334
+[; ;ic.c: 333: }
+"333
 [e :UE 571 ]
 }
