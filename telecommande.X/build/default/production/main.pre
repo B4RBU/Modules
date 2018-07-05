@@ -14611,10 +14611,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 210 "mcc_generated_files/pin_manager.h"
+# 227 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 222
+# 239
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
@@ -14797,6 +14797,7 @@ void Scan();
 void StopScan();
 void connexion();
 void remote();
+char ReturnReg();
 
 # 5 "I2C.h"
 void initI2C();
@@ -14854,12 +14855,24 @@ _delay((unsigned long)((1000)*(32000000/4000.0)));
 
 remote();
 _delay((unsigned long)((1000)*(32000000/4000.0)));
-
+uint8_t k;
 while (1) {
+
+k = ReturnReg();
+
+if (k == '$') {
+do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0);
+do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0);
+do { LATCbits.LATC5 = ~LATCbits.LATC5; } while(0);
+_delay((unsigned long)((1000)*(32000000/4000.0)));
+}
+
+# 74
 if (PORTCbits.RC4 == 0) {
 
 
-do { LATAbits.LATA2 = 1; } while(0);
+do { LATAbits.LATA1 = 1; } while(0);
 EUSART_Write('$');
 
 
@@ -14867,13 +14880,12 @@ EUSART_Write('$');
 EUSART_Write(10);
 EUSART_Write(13);
 
-# 69
-}
-else if (PORTCbits.RC4 == 1) {
+# 89
+} else if (PORTCbits.RC4 == 1) {
 
-do { LATAbits.LATA2 = 0; } while(0);
+do { LATAbits.LATA1 = 0; } while(0);
 
-# 82
+# 101
 }
 
 

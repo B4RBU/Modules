@@ -10872,8 +10872,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2C.h: 11: void re_startI2C();
 [; ;I2C.h: 12: void sendAckI2C();
 [; ;I2C.h: 13: void sendNoAckI2C();
-[; ;pin_manager.h: 210: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 222: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 227: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 239: void PIN_MANAGER_IOC(void);
 [; ;interrupt_manager.h: 109: void interrupt INTERRUPT_InterruptManager(void);
 [; ;spi.h: 117: void SPI_Initialize(void);
 [; ;spi.h: 152: uint8_t SPI_Exchange8bit(uint8_t data);
